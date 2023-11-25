@@ -1,0 +1,22 @@
+/** website font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@200&display=swap');
+
+/** css code */
+
+/* alle margins en padding van google weghalen */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* navbar */
+li {
+    margin: 0px 40px;
+}
+
+.container-fluid-nav div{
+    display: flex;
+  justify-content: space-around;}
+
+
+
