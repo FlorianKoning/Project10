@@ -8,11 +8,11 @@ require "klant.php";
 
 // $_SESSION["id"] = $klant->getKlantID();
 
-$klant = new Klant($_POST["naam"]);
-$klant->searchKlantNaam($_POST["naam"]);
+$klant = new Klant($_POST["email"]);
+$klant->searchKlantEmail($_POST["email"]);
 
 $_SESSION["id"] = $klant->getKlantID();
-$_SESSION["naam"] = $_POST["naam"];
+$_SESSION["email"] = $_POST["email"];
 
 ?>
 <!DOCTYPE html>

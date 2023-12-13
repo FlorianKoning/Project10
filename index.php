@@ -10,7 +10,7 @@
     <a href="klantAanmelden1.php">Aanmelden</a>
 
     <form action="klantGegevenVeranderen1.php" method="post">
-        Account updaten met Naam: <input type="text" name="naam" required>
+        Account updaten met Email: <input type="text" name="email" required>
         <input type="submit">
     </form>
 </body>

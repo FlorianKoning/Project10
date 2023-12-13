@@ -32,7 +32,7 @@ session_start();
 
             $klant = new Klant($klantNaam, $klantWachtwoord, $klantEmail, $klantID);
             
-            $klant->GegevenVeranderenWachtWoordCheck($_SESSION["naam"], $klantWachtwoord, $klantID);
+            $klant->GegevenVeranderenWachtWoordCheck($_SESSION["email"], $klantWachtwoord, $klantID);
 
             echo "<br>";
             echo "<button><a href='index.php'> Terug naar het menu </a></button>";

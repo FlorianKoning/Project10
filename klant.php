@@ -126,13 +126,13 @@ class Klant{
         $db->SQLCommando("delete from klanten where naam  = :naam", ["naam" => $klantNaam]);
     }
 
-    public function logInCheckKlant($klantNaam, $klantWachtwoord){
+    public function logInCheckKlant($klantEmail, $klantWachtwoord){
         // Connectie maken met de database 
         $db = new Database("localhost","root","","project_10");
 
         $HashedWachtwoord = "Niks";
 
-        $logins = $db->SQLCommando("select * from klant where Naam = :Naam", ["Naam" => $klantNaam]);
+        $logins = $db->SQLCommando("select * from klant where Email = :Email", ["Email" => $klantEmail]);
 
         foreach($logins as $login){
             $HashedWachtwoord = $login["Wachtwoord"];
@@ -147,13 +147,13 @@ class Klant{
         }
     }
 
-    public function GegevenVeranderenWachtWoordCheck($klantNaam, $klantWachtwoord, $klantID){
+    public function GegevenVeranderenWachtWoordCheck($klantEmail, $klantWachtwoord, $klantID){
         // Connectie maken met de database 
         $db = new Database("localhost","root","","project_10");
 
         $HashedWachtwoord = "Niks";
 
-        $logins = $db->SQLCommando("select * from klant where Naam = :Naam", ["Naam" => $klantNaam]);
+        $logins = $db->SQLCommando("select * from klant where Email = :Email", ["Email" => $klantEmail]);
 
         foreach($logins as $login){
             $HashedWachtwoord = $login["Wachtwoord"];
