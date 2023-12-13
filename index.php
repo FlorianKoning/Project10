@@ -70,6 +70,28 @@ $_SESSION['email'] = "";
         </div>
 
 
+        <div class="newsContainer">
+            <h2 style="text-align: center; margin-bottom: 50px;">News</h2>
+            <div class="newsboxContainer">
+                <div class="newsbox">
+                    <img width="400px" height="150px" src="./includes/images/newFoto1.jpg" alt="foto van een hal">
+                    <h4>Heel veel eten enzo weet je wel!</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
+                </div>
+                <div class="newsbox">
+                    <img width="400px" height="150px" src="./includes/images/newFoto2.jpg" alt="foto van een hal">
+                    <h4>We hebben oude huizen, wist u dat?</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
+                </div>
+                <div class="newsbox">
+                    <img width="400px" height="150px" src="./includes/images/newFoto3.jpg" alt="foto van een hal">
+                    <h4>NEWS!!!!</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
+                </div>
+            </div>
+        </div>
+
+
 
     </main>
 
