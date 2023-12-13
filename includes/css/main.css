@@ -1,5 +1,5 @@
 /** website font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Raleway:wght@200&display=swap');
 
 /** css code */
 
@@ -63,15 +63,46 @@ li {
 }
 
 .footerContainer {
-    margin-top: 57vh;
     height: 200px;
-
-    border-top: #00AB5B 3px solid;
-    background-color: #E7EEF7;
+    background-color: #00AB5B;
     
     text-align: center;
 }
 
 
-/*  */
+/** userpagina  */
+
+.titleContainer {
+    height: 200px;
+    text-align: center;;
+}
+
+.userpaginaMain {
+    background-color: #E7EEF7;
+    height: 71vh;
+}
+
+.textboxContainer {
+    display: flex;
+    height: 400px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.textbox {
+    width: 300px;
+    height: 200px;
+    padding: 10px 0px 0px 10px;
+    background-color: #fff;
+
+    border-bottom: #A0A0A0 5px solid;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.textbox:hover {
+    border-bottom: #00AB5B 5px solid;
+}
+
 
