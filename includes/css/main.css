@@ -7,6 +7,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* navbar */
@@ -16,6 +17,15 @@ nav {
 
 li {
     margin: 0px 40px;
+}
+
+#navbarNav ul li a {
+    opacity: 0.7;
+}
+
+#navbarNav ul li a:hover {
+    opacity: 1;
+    transition: 0.5s;
 }
 
 .smallerText {
@@ -55,31 +65,31 @@ li {
 
 
     color: white;
-    background-color: #00AB5B;
+    background-color: #222629;
     flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
 
-.footerContainer {
-    height: 200px;
-    background-color: #00AB5B;
-    
-    text-align: center;
-}
-
-
 /** userpagina  */
 
 .titleContainer {
-    height: 200px;
-    text-align: center;;
+    display: flex;
+    height: 250px;
+    color: white;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+
+    border-bottom: 1px block solid;
 }
 
 .userpaginaMain {
-    background-color: #E7EEF7;
-    height: 71vh;
+    background-color: #474B4F;
+    height: 75vh;
 }
 
 .textboxContainer {
@@ -97,12 +107,88 @@ li {
     padding: 10px 0px 0px 10px;
     background-color: #fff;
 
-    border-bottom: #A0A0A0 5px solid;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-bottom: #6B6E70 5px solid;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .textbox:hover {
-    border-bottom: #00AB5B 5px solid;
+    border-bottom: #86C232 5px solid;
+    transition: 0.5s;
 }
 
+.footerContainer {
+    width: 100%;
+    padding: 70px 30px 20px;
+    background-color: #222629;
 
+    border-top: #86C232 solid 2px;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+}
+
+.footerNav {
+    margin: 30px 0;
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+}
+
+.footerNav ul li a {
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.footerNav ul li a:hover {
+    opacity: 1;
+}
+
+.footerBottom {
+    background-color: #0c0e0f;
+    padding: 20px;
+    text-align: center;
+}
+
+.footerBottom p {
+    color: white;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialIcons a i {
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+
+.socialIcons a:hover {
+    background-color: #222629;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover i {
+    color: white;
+    transition: 0.5s;
+}
+
+.designers {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
