@@ -8,5 +8,10 @@
 <body>
     <h1>BRUH</h1>
     <a href="klantAanmelden1.php">Aanmelden</a>
+
+    <form action="klantGegevenVeranderen1.php" method="post">
+        Account updaten met Naam: <input type="text" name="naam" required>
+        <input type="submit">
+    </form>
 </body>
 </html>

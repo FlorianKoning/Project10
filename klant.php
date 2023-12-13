@@ -59,12 +59,12 @@ class Klant{
 
         // gegevens in de juiste database tabel zetten
         $db->SQLCommando("insert into klant values 
-        (:ID, :naam, :email, :wachtwoord)
+        (:ID, :Naam, :Email, :Wachtwoord)
         ",[
             "ID" => $klantID,
-            "naam" => $klantNaam,
-            "email" => $klantEmail,
-            "wachtwoord" => $klantWachtwoord
+            "Naam" => $klantNaam,
+            "Email" => $klantEmail,
+            "Wachtwoord" => $klantWachtwoord
         ]);
     }
 
@@ -107,15 +107,15 @@ class Klant{
         $db->SQLCommando(
         "update klant set
                 ID           = :ID,
-                naam         = :naam,
-                email        = :email,
-                wachtwoord   = :wachtwoord
+                Naam         = :Naam,
+                Email        = :Email,
+                Wachtwoord   = :Wachtwoord
         where   ID = :ID"
         ,[
             "ID" => $klantID,
-            "naam" => $klantNaam,
-            "email" => $klantEmail,
-            "wachtwoord" => $klantWachtwoord
+            "Naam" => $klantNaam,
+            "Email" => $klantEmail,
+            "Wachtwoord" => $klantWachtwoord
         ]);
     }
 
@@ -132,10 +132,10 @@ class Klant{
 
         $HashedWachtwoord = "Niks";
 
-        $logins = $db->SQLCommando("select * from klant where naam = :naam", ["naam" => $klantNaam]);
+        $logins = $db->SQLCommando("select * from klant where Naam = :Naam", ["Naam" => $klantNaam]);
 
         foreach($logins as $login){
-            $HashedWachtwoord = $login["wachtwoord"];
+            $HashedWachtwoord = $login["Wachtwoord"];
         }
 
         $TheSame = password_verify($klantWachtwoord, $HashedWachtwoord);
@@ -151,12 +151,12 @@ class Klant{
         // Connectie maken met de database 
         $db = new Database("localhost","root","","project_10");
 
-        $HashedWachtwoord = "";
+        $HashedWachtwoord = "Niks";
 
-        $logins = $db->SQLCommando("select * from klant where naam = :naam", ["naam" => $klantNaam]);
+        $logins = $db->SQLCommando("select * from klant where Naam = :Naam", ["Naam" => $klantNaam]);
 
         foreach($logins as $login){
-            $HashedWachtwoord = $login["wachtwoord"];
+            $HashedWachtwoord = $login["Wachtwoord"];
         }
 
         $TheSame = password_verify($klantWachtwoord, $HashedWachtwoord);
@@ -165,6 +165,9 @@ class Klant{
             $this->klantWachtwoord = $HashedWachtwoord;
             $this->klantID = $klantID;
             $this->updateKlant($this->klantID);
+
+            echo "Uw nieuwe gegevens <br>";
+            $this->afdrukkenKlant();
         } else{
             echo "Verkeerd wachtwoord ingevoerd, probeer opnieuw.";
         }
@@ -176,10 +179,10 @@ class Klant{
 
         $HashedWachtwoord = "Niks";
 
-        $logins = $db->SQLCommando("select * from klant where naam = :naam", ["naam" => $klantNaam]);
+        $logins = $db->SQLCommando("select * from klant where Naam = :Naam", ["Naam" => $klantNaam]);
 
         foreach($logins as $login){
-            $HashedWachtwoord = $login["wachtwoord"];
+            $HashedWachtwoord = $login["Wachtwoord"];
         }
 
         $TheSame = password_verify($klantWachtwoord, $HashedWachtwoord);
@@ -194,15 +197,15 @@ class Klant{
     public function searchKlantNaam($klantNaam){
         $db = new Database("localhost","root","","project_10");
 
-        // Zoeken op klant ID in de database
-        $klantList = $db->SQLCommando("select * from klant where naam = :naam", ["naam" => $klantNaam]);
+        // Zoeken op klant Naam in de database
+        $klantList = $db->SQLCommando("select * from klant where Naam = :Naam", ["Naam" => $klantNaam]);
     
         // klant gegevens opvragen
         foreach ($klantList as $klant) {
             $this->klantID = $klant["ID"];
-            $this->klantNaam = $klant["naam"];
-            $this->klantEmail = $klant["email"];
-            $this->klantWachtwoord = $klant["wachtwoord"];
+            $this->klantNaam = $klant["Naam"];
+            $this->klantEmail = $klant["Email"];
+            $this->klantWachtwoord = $klant["Wachtwoord"];
         }
     }
 
@@ -210,13 +213,13 @@ class Klant{
         $db = new Database("localhost","root","","project_10");
 
         // checken waar de email in de database overeenkomt met de gegeven adress
-        $klantList = $db->SQLCommando("select * from klant where email = :email", ["email" => $klantEmail]);
+        $klantList = $db->SQLCommando("select * from klant where Email = :Email", ["Email" => $klantEmail]);
     
         // supplier gegevens opvragen
         foreach ($klantList as $klant) {
             $this->klantID = $klant["ID"];
-            $this->klantNaam = $klant["naam"];
-            $this->klantEmail = $klant["email"];
+            $this->klantNaam = $klant["Naam"];
+            $this->klantEmail = $klant["Email"];
         }
     }
 
