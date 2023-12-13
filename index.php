@@ -71,7 +71,7 @@ $_SESSION['email'] = "";
 
 
         <div class="newsContainer">
-            <h2 style="text-align: center; margin-bottom: 50px;">News</h2>
+            <h2 style="text-align: center;">News</h2>
             <div class="newsboxContainer">
                 <div class="newsbox">
                     <img width="400px" height="150px" src="./includes/images/newFoto1.jpg" alt="foto van een hal">

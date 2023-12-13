@@ -63,7 +63,6 @@ li {
 .formContainer {
     display: flex;
     margin-top: 15px;
-    margin-bottom: 150px;
     border-radius: 10px;
     width: 600px;
     height: 200px;
@@ -95,8 +94,11 @@ li {
 /** background */
 
 .userpaginaMain {
+    display: flex;
     background-color: #474B4F;
-    height: 100vh;
+    height: 120vh;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
 /** textbox/links */
@@ -128,7 +130,7 @@ li {
 /** news */
 
 .newsContainer {
-    margin-top: 100px;
+    margin-top: 250px;
     height: 100%;
     width: 100%;
     color: white;
@@ -145,7 +147,6 @@ li {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 400;
-    margin: 0px 5px;
 }
 
 .newsbox {
