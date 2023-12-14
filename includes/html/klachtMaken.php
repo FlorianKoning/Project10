@@ -2,6 +2,8 @@
 session_start();
 
 require_once '../classes/klacht.php';
+$db = new Database("localhost", "root", "", "project_10");
+$klacht = new klacht($db->conn);
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -54,12 +56,7 @@ require_once '../classes/klacht.php';
 
     <!-- al het andere van de website -->
     <main class="userpaginaMain">
-        <?php
-            $db = new Database("localhost", "root", "", "project_10");
-            $klacht = new klacht($db->conn);
 
-            $klacht->create("Te veel apen onsnapt", "er zijn allemaal gorilla's uit blijdorp ontsnapt", "12/12/1212", "z243 x546 y-64", 69);
-        ?>
     </main>
 
     <!-- footer van de website -->

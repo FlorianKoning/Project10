@@ -1,7 +1,11 @@
 <?php
 session_start();
 $_SESSION['email'] = "";
+$_SESSION['ingelogt'] = false;
 
+require_once './includes/classes/klacht.php';
+$db = new Database("localhost", "root", "", "project_10");
+$klacht = new klacht($db->conn);
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -35,7 +39,13 @@ $_SESSION['email'] = "";
                             <a style="color: white;" class="nav-link" href="https://www.google.com/maps/d/viewer?mid=1-LWtYaeSCcpYJZcBAqD9EZqlKyY&hl=nl&ll=51.903391420345116%2C4.445905000000003&z=14"><i>Kaart</i></a>
                         </li>
                         <li class="nav-item">
-                            <a style="color: white;" class="nav-link active" href="#">Log in</a>
+                            <a style="color: white;" class="nav-link active" href="#">
+                                <?php if ($_SESSION['ingelogt']) {
+                                    echo "Log uit";
+                                } else {
+                                    echo "Log in";
+                                }
+                                ?></a>
                         </li>
                     </ul>
                 </div>
@@ -58,17 +68,19 @@ $_SESSION['email'] = "";
 
         <div class="container">
             <div class="formContainer">
-                <h2>Log hier in</h2>
-                <form action="./includes/html/login.php" method="post">
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Vul hier uw email in.</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <form action="#" class="form">
+                    <h2 style="color: #86C232;">U kunt hier ook inloggen</h2>
+                    <div class="input-box">
+                        <label>Email adress</label>
+                        <input type="text" placeholder="typ hier uw emailadress in">
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+
+                    <div class="input-box">
+                        <label>Email adress</label>
+                        <input type="text" placeholder="typ hier uw emailadress in">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                    <button>Submit</button>
                 </form>
             </div>
         </div>

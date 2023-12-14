@@ -64,17 +64,56 @@ li {
 
 .formContainer {
     display: flex;
-    width: 600px;
-    height: 280px;
+    margin-top: 15px;
     border-radius: 10px;
-    margin-top: 20px;
-
+    width: 600px;
+    height: 390px;
     color: white;
     background-color: #222629;
-    flex-direction: column;
     align-content: center;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+}
+
+.formContainer .form {
+    margin-top: 30px;
+}
+
+.form .input-box {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-box label {
+    opacity: 0.7;
+}
+
+.form .input-box input {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+    color: #707070;
+}
+
+.form button {
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    background-color: #86C232;
+}
+
+.form button:hover {
+    opacity: 0.7;
 }
 
 /** Title  */
@@ -100,10 +139,9 @@ li {
 .userpaginaMain {
     display: flex;
     background-color: #474B4F;
-    height: 120vh;
+    height: 130vh;
     justify-content: flex-start;
     flex-direction: column;
-
 }
 
 /** textbox/links */
@@ -159,17 +197,12 @@ li {
 .newsbox {
     width: 400px;
     height: 350px;
-    background-color: #222629;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    /* background-color: white; */
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 .newsbox h4 {
     color: #86C232;
-    padding: 10px 0px 0px 10px;
-}
-
-.newsbox p {
-    padding: 0px 0px 0px 10px;
 }
 
 /** footer */

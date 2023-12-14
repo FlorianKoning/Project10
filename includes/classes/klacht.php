@@ -13,18 +13,23 @@ class klacht
     }
 
     // *create klant
-    public function create(string $titel, string $omschrijving, string $tijdstip, string $coordinaten, int $klantID)
+    public function create(string $titel, string $omschrijving, string $tijdstip, string $coordinaten, int $accountID)
     {
-        $sql = "INSERT INTO klacht (Titel Omschrijving, Tijdstip, Coordinaten, klantID) VALUES = (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO klacht (Titel, Omschrijving, Tijdstip, Coordinaten, accountID) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute([$titel, $omschrijving, $tijdstip, $coordinaten, $klantID]);
+        $stmt->execute([$titel, $omschrijving, $tijdstip, $coordinaten, $accountID]);
 
         if ($stmt) {
-            echo "Gelukt om Nieuwe klacht in te dienen";
+            echo "<p style='color: white;'>Gelukt om Nieuwe klacht in te dienen</p>";
         } else {
-            echo"Er is iets fout gegaan, kon geen nieuwe klacht aanmaken!";
+            echo "<p>Er is iets fout gegaan, kon geen nieuwe klacht aanmaken!</p>";
         }
     }
 
-    // *delete klant
+    public function update(string $titel, string $omschrijving, string $tijdstip, string $coordinaten)
+    {
+    }
+
+    // *update klant
+
 }
