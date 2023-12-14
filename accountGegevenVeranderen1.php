@@ -1,17 +1,14 @@
 <?php
 session_start();
 
-require "klant.php";
+require "account.php";
 
-// $klant = new Klant($_SESSION["naam"]);
-// $klant->searchKlantNaam($_SESSION["naam"]);
+//! Vergeet niet POST te veranderen naar SESSION bij merge
 
-// $_SESSION["id"] = $klant->getKlantID();
+$account = new Account($_POST["email"]);
+$account->searchaccountEmail($_POST["email"]);
 
-$klant = new Klant($_POST["email"]);
-$klant->searchKlantEmail($_POST["email"]);
-
-$_SESSION["id"] = $klant->getKlantID();
+$_SESSION["id"] = $account->getaccountID();
 $_SESSION["email"] = $_POST["email"];
 
 ?>
@@ -33,10 +30,10 @@ $_SESSION["email"] = $_POST["email"];
 
         <div>
             <h1>Welke gegevens wilt u wijzigen?</h1>
-            <form action="klantGegevenVeranderen2.php" method="post">
-                ID: <?php echo $klant->getKlantID(); ?><br>
-                Naam: <input type="text" name="naamvak" value="<?php echo $klant->getKlantNaam()?>" required> <br>
-                Email: <input type="email" name="emailvak" value="<?php echo $klant->getKlantEmail()?>" required> <br><br>
+            <form action="accountGegevenVeranderen2.php" method="post">
+                ID: <?php echo $account->getaccountID(); ?><br>
+                Naam: <input type="text" name="naamvak" value="<?php echo $account->getaccountNaam()?>" required> <br>
+                Email: <input type="email" name="emailvak" value="<?php echo $account->getaccountEmail()?>" required> <br><br>
                 Vul uw wachtwoord in als bevestiging. <br>
                 Wachtwoord: <input type="password" name="wachtwoordvak" required><br>
                 <input type="submit">

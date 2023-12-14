@@ -15,7 +15,7 @@
     <main>
         <div>
             <h1>Vul uw gegevens in</h1>
-            <form action="klantAanmelden2.php" method="post">
+            <form action="accountAanmelden2.php" method="post">
                 Naam: <br>
                 <input type="text" name="naamvak" placeholder="Naam" required><br>
                 Email: <br>

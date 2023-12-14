@@ -21,23 +21,23 @@ session_start();
         <div>
             <h1>Resultaat</h1>
             <?php
-            // klantgegevens uit het formulier halen
-            $klantID = $_SESSION["id"];
-            $klantNaam = $_POST["naamvak"];
-            $klantEmail = $_POST["emailvak"];
-            $klantWachtwoord = $_POST["wachtwoordvak"];
+            // accountgegevens uit het formulier halen
+            $accountID = $_SESSION["id"];
+            $accountNaam = $_POST["naamvak"];
+            $accountEmail = $_POST["emailvak"];
+            $accountWachtwoord = $_POST["wachtwoordvak"];
 
-            // klant class aanvragen
-            require_once "klant.php";
+            // account class aanvragen
+            require_once "account.php";
 
-            $klant = new Klant($klantNaam, $klantWachtwoord, $klantEmail, $klantID);
+            $account = new Account($accountNaam, $accountWachtwoord, $accountEmail, $accountID);
             
-            $klant->GegevenVeranderenWachtWoordCheck($_SESSION["email"], $klantWachtwoord, $klantID);
+            $account->GegevenVeranderenWachtWoordCheck($_SESSION["email"], $accountWachtwoord, $accountID);
 
             echo "<br>";
             echo "<button><a href='index.php'> Terug naar het menu </a></button>";
 
-            $_SESSION["naam"] = $klant->getKlantNaam();
+            $_SESSION["naam"] = $account->getaccountNaam();
             ?>
         </div>
 

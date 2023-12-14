@@ -16,20 +16,20 @@
         <div>
             <h1>Gefeliciteerd</h1>
             <?php
-            require_once "klant.php";
+            require_once "account.php";
 
-            $klantID = NULL;
-            $klantNaam = $_POST ["naamvak"];
-            $klantEmail = $_POST ["emailvak"];
-            $klantWachtwoord = $_POST ["wachtwoordvak"];
+            $accountID = NULL;
+            $accountNaam = $_POST ["naamvak"];
+            $accountEmail = $_POST ["emailvak"];
+            $accountWachtwoord = $_POST ["wachtwoordvak"];
 
-            $klantWWHash = password_hash($klantWachtwoord, NULL);
+            $accountWWHash = password_hash($accountWachtwoord, NULL);
 
-            // klant gegevens invoeren
-            $klant = new Klant($klantNaam, $klantWWHash, $klantEmail);
+            // account gegevens invoeren
+            $account = new account($accountNaam, $accountWWHash, $accountEmail);
             
-            // klant in de database zetten
-            $klant->createKlant();
+            // account in de database zetten
+            $account->createaccount();
             echo "<p>Uw account is toegevoegd</p><br>";
             ?>
 
