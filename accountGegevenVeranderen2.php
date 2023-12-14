@@ -37,7 +37,7 @@ session_start();
             echo "<br>";
             echo "<button><a href='index.php'> Terug naar het menu </a></button>";
 
-            $_SESSION["naam"] = $account->getaccountNaam();
+            $_SESSION["naam"] = $account->getAccountNaam();
             ?>
         </div>
 

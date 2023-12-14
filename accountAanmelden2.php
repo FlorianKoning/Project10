@@ -29,7 +29,7 @@
             $account = new account($accountNaam, $accountWWHash, $accountEmail);
             
             // account in de database zetten
-            $account->createaccount();
+            $account->createAccount();
             echo "<p>Uw account is toegevoegd</p><br>";
             ?>
 
