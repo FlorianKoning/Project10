@@ -19,43 +19,43 @@ class Account{
     }
 
     // Getters
-    public function getaccountID(){
+    public function getAccountID(){
         return $this->accountID;
     }
-    public function getaccountNaam(){
+    public function getAccountNaam(){
         return $this->accountNaam;
     }
-    public function getaccountEmail(){
+    public function getAccountEmail(){
         return $this->accountEmail;
     }
-    public function getaccountWachtwoord(){
+    public function getAccountWachtwoord(){
         return $this->accountWachtwoord;
     }
 
     // Setters
-    public function setaccountID($accountID){
+    public function setAccountID($accountID){
         $this->accountID = $accountID;
     }
-    public function setaccountNaam($accountNaam){
+    public function setAccountNaam($accountNaam){
         $this->accountNaam = $accountNaam;
     }
-    public function setaccountEmail($accountEmail){
+    public function setAccountEmail($accountEmail){
         $this->accountEmail = $accountEmail;
     }
-    public function setaccountWachtwoord($accountWachtwoord){
+    public function setAccountWachtwoord($accountWachtwoord){
         $this->accountWachtwoord = $accountWachtwoord;
     }
 
     // CRUD
-    public function createaccount(){
+    public function createAccount(){
         // Connectie maken met de database 
         $db = new Database("localhost","root","","project_10");
 
         // gegevens in variabelen zetten via de getters
         $accountID = NULL;
         $accountNaam = $this->getaccountNaam();
-        $accountEmail = $this->getaccountEmail();
-        $accountWachtwoord = $this->getaccountWachtwoord();
+        $accountEmail = $this->getAccountEmail();
+        $accountWachtwoord = $this->getAccountWachtwoord();
 
         // gegevens in de juiste database tabel zetten
         $db->SQLCommando("insert into account values 
@@ -68,18 +68,16 @@ class Account{
         ]);
     }
 
-    public function readaccounten(){
+    public function readAccounts(){
         $db = new Database("localhost","root","","donkey_travel");
 
         // Alle accounten gegevens in de database opvragen
-        $accountList = $db->SQLCommando("select * from accounten where 1",[]);
+        $accountList = $db->SQLCommando("select * from account where 1",[]);
 
         echo "<table>"; 
         echo "<th>ID</th>";
         echo "<th>Naam</th>";
         echo "<th>Email</th>";
-        echo "<th>Telefoon nummer</th>";
-        echo "<th>Laatst gewijzigd</th>";
         echo "</tr>";
 
         // Alle accounten gegevens laten zien
@@ -88,20 +86,18 @@ class Account{
             echo "<td>" . $account["ID"] . "</td>";
             echo "<td>" . $account["naam"] . "</td>";
             echo "<td>" . $account["email"] . "</td>";
-            echo "<td>" . $account["telefoon"] . "</td>";
-            echo "<td>" . $account["gewijzigd"] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
     }
 
-    public function updateaccount($accountID){
+    public function updateAccount($accountID){
         $db = new Database("localhost","root","","project_10");
 
-        $accountID = $this->getaccountID();
-        $accountNaam = $this->getaccountNaam();
-        $accountEmail = $this->getaccountEmail();
-        $accountWachtwoord = $this->getaccountWachtwoord();
+        $accountID = $this->getAccountID();
+        $accountNaam = $this->getAccountNaam();
+        $accountEmail = $this->getAccountEmail();
+        $accountWachtwoord = $this->getAccountWachtwoord();
 
         // Veranderen van de gegevens in de database gebaseerd op de gegeven supplier id
         $db->SQLCommando(
@@ -119,14 +115,14 @@ class Account{
         ]);
     }
 
-    public function deleteaccount($accountNaam){
+    public function deleteAccount($accountNaam){
         $db = new Database("localhost","root","","donkey_travel");
         
         // Checken waar de supplier id in de database overeenkomt met de gegeven supplier id
         $db->SQLCommando("delete from accounten where naam  = :naam", ["naam" => $accountNaam]);
     }
 
-    public function logInCheckaccount($accountEmail, $accountWachtwoord){
+    public function logInCheckAccount($accountEmail, $accountWachtwoord){
         // Connectie maken met de database 
         $db = new Database("localhost","root","","project_10");
 
@@ -164,10 +160,10 @@ class Account{
         if($TheSame){
             $this->accountWachtwoord = $HashedWachtwoord;
             $this->accountID = $accountID;
-            $this->updateaccount($this->accountID);
+            $this->updateAccount($this->accountID);
 
             echo "Uw nieuwe gegevens <br>";
-            $this->afdrukkenaccount();
+            $this->afdrukkenAccount();
         } else{
             echo "Verkeerd wachtwoord ingevoerd, probeer opnieuw.";
         }
@@ -194,7 +190,7 @@ class Account{
         }
     }
     
-    public function searchaccountNaam($accountNaam){
+    public function searchAccountNaam($accountNaam){
         $db = new Database("localhost","root","","project_10");
 
         // Zoeken op account Naam in de database
@@ -209,7 +205,7 @@ class Account{
         }
     }
 
-    public function searchaccountEmail($accountEmail){
+    public function searchAccountEmail($accountEmail){
         $db = new Database("localhost","root","","project_10");
 
         // checken waar de email in de database overeenkomt met de gegeven adress
@@ -224,9 +220,9 @@ class Account{
     }
 
     // Het laten zien van de huidige gegevens in de class met gebruik van getters
-    public function afdrukkenaccount(){
-        echo "<p>ID: " . $this->getaccountID() . "<br>";
-        echo "Naam: " . $this->getaccountNaam() . "<br>";
-        echo "Email: " . $this->getaccountEmail() . "<br></p>";
+    public function afdrukkenAccount(){
+        echo "<p>ID: " . $this->getAccountID() . "<br>";
+        echo "Naam: " . $this->getAccountNaam() . "<br>";
+        echo "Email: " . $this->getAccountEmail() . "<br></p>";
     }
 }
