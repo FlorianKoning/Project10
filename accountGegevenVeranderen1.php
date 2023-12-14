@@ -3,7 +3,7 @@ session_start();
 
 require "account.php";
 
-//! Vergeet niet POST te veranderen naar SESSION bij merge
+//! Vergeet niet POST te veranderen naar SESSION bij merge en links naar pagina"s :P
 
 $account = new Account($_POST["email"]);
 $account->searchAccountEmail($_POST["email"]);

@@ -10,7 +10,7 @@ class Account{
     private string $accountEmail;
     private string $accountWachtwoord;
 
-    // wanneer de class wordt aangemaakt met | new account() | dan worden er standaard gegevens ingezet op de variabelen bovenaan
+    // wanneer de class wordt aangemaakt met | new Account() | dan worden er standaard gegevens ingezet op de variabelen bovenaan
     public function __construct($accountNaam="", $accountWachtwoord="", $accountEmail="", $accountID=0){
         $this->accountNaam = $accountNaam;
         $this->accountEmail = $accountEmail;
@@ -71,7 +71,7 @@ class Account{
     public function readAccounts(){
         $db = new Database("localhost","root","","donkey_travel");
 
-        // Alle accounten gegevens in de database opvragen
+        // Alle account gegevens in de database opvragen
         $accountList = $db->SQLCommando("select * from account where 1",[]);
 
         echo "<table>"; 
@@ -80,7 +80,7 @@ class Account{
         echo "<th>Email</th>";
         echo "</tr>";
 
-        // Alle accounten gegevens laten zien
+        // Alle account gegevens laten zien
         foreach($accountList as $account){
             echo "<tr>";
             echo "<td>" . $account["ID"] . "</td>";
@@ -99,7 +99,7 @@ class Account{
         $accountEmail = $this->getAccountEmail();
         $accountWachtwoord = $this->getAccountWachtwoord();
 
-        // Veranderen van de gegevens in de database gebaseerd op de gegeven supplier id
+        // Veranderen van de gegevens in de database gebaseerd op de gegeven account id
         $db->SQLCommando(
         "update account set
                 ID           = :ID,
@@ -118,7 +118,7 @@ class Account{
     public function deleteAccount($accountNaam){
         $db = new Database("localhost","root","","donkey_travel");
         
-        // Checken waar de supplier id in de database overeenkomt met de gegeven supplier id
+        // Checken waar de account id in de database overeenkomt met de gegeven account id
         $db->SQLCommando("delete from accounten where naam  = :naam", ["naam" => $accountNaam]);
     }
 
@@ -193,7 +193,7 @@ class Account{
     public function searchAccountNaam($accountNaam){
         $db = new Database("localhost","root","","project_10");
 
-        // Zoeken op account Naam in de database
+        // Zoeken op account naam in de database
         $accountList = $db->SQLCommando("select * from account where Naam = :Naam", ["Naam" => $accountNaam]);
     
         // account gegevens opvragen
@@ -211,7 +211,7 @@ class Account{
         // checken waar de email in de database overeenkomt met de gegeven adress
         $accountList = $db->SQLCommando("select * from account where Email = :Email", ["Email" => $accountEmail]);
     
-        // supplier gegevens opvragen
+        // account gegevens opvragen
         foreach ($accountList as $account) {
             $this->accountID = $account["ID"];
             $this->accountNaam = $account["Naam"];
