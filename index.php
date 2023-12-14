@@ -59,10 +59,14 @@ $_SESSION['email'] = "";
         <div class="container">
             <div class="formContainer">
                 <h2>Log hier in</h2>
-                <form action="POST">
+                <form action="./includes/html/login.php" method="post">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Vul hier uw email in.</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -80,7 +84,7 @@ $_SESSION['email'] = "";
                 </div>
                 <div class="newsbox">
                     <img width="400px" height="150px" src="./includes/images/newFoto2.jpg" alt="foto van een hal">
-                    <h4>We hebben oude huizen, wist u dat?</h4>
+                    <h4>We hebben oude huizen!!!!!</h4>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
                 </div>
                 <div class="newsbox">
