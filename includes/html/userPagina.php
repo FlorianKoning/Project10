@@ -33,19 +33,16 @@ $klacht = new klacht($db->conn);
                 <div style="letter-spacing: 1px; text-transform: uppercase;" class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
+                            <a style="color: white;" class="nav-link smallerText" href="klachtMaken.php"><i>Klacht aanmaken</i></a>
+                        </li>
+                        <li class="nav-item">
                             <a style="color: white;" class="nav-link smallerText" href="#"><i>Contact</i></a>
                         </li>
                         <li class="nav-item smallerText">
                             <a style="color: white;" class="nav-link" href="https://www.google.com/maps/d/viewer?mid=1-LWtYaeSCcpYJZcBAqD9EZqlKyY&hl=nl&ll=51.903391420345116%2C4.445905000000003&z=14"><i>Kaart</i></a>
                         </li>
                         <li class="nav-item">
-                            <a style="color: white;" class="nav-link active" href="#">
-                                <?php if ($_SESSION['ingelogt']) {
-                                    echo "Log uit";
-                                } else {
-                                    echo "Log in";
-                                }
-                                ?></a>
+                            <a style="color: white;" class="nav-link active" href="#">Log uit</a>
                         </li>
                     </ul>
                 </div>
