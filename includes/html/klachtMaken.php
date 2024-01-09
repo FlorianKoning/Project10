@@ -104,7 +104,7 @@ $klacht = new klacht($db->conn);
             </div>
         </div>
         <div class="footerBottom">
-            <p>Copyright &copy;2023; Designed bij <span class="designers">Vincent, Valentijn en Florian</span></p>
+            <p>Copyright &copy;<?php echo date("Y"); ?>; Designed bij <span class="designers">Vincent, Valentijn en Florian</span></p>
         </div>
     </footer>
 
