@@ -23,28 +23,9 @@ $klacht = new klacht($db->conn);
     <!-- navbar en header img van website -->
     <header style="background-color: #474B4F;">
         <!-- navbar met foto -->
-        <nav class="navbar navbar-expand-lg " style="border-bottom: #86C232 solid 2px; background-color: #222629;">
-            <div class="container-fluid">
-                <img src="includes/images/logo-gemeente-rotterdam.png" alt="Logo" width="80px" class="d-inline-block align-text-top">
-                <a class="navbar-brand" style="font-size: 18px; color: #61892F; margin-left: 20px;"><b>Gemeente Rotterdam</b></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a style="color: white;" class="nav-link smallerText" href="#"><i>Contact</i></a>
-                        </li>
-                        <li class="nav-item smallerText">
-                            <a style="color: white;" class="nav-link" href="https://www.google.com/maps/d/viewer?mid=1-LWtYaeSCcpYJZcBAqD9EZqlKyY&hl=nl&ll=51.903391420345116%2C4.445905000000003&z=14"><i>Kaart</i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="color: white;" class="nav-link active" href="#">Log in</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <?php
+        include_once('includes/html/components/navbar.php');
+        ?>
 
         <div class="container-fluid">
             <div class="banner">
@@ -70,7 +51,7 @@ $klacht = new klacht($db->conn);
                     </div>
 
                     <div class="input-box">
-                        <label>Email adress</label>
+                        <label>Wachtwoord</label>
                         <input type="text" placeholder="typ hier uw emailadress in">
                     </div>
 
