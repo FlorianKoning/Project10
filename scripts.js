@@ -15,9 +15,11 @@ let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
 
 map.addLayer(layer);
 
-// let marker = new L.Marker([51.9237, 4.4759]);
-// marker.bindPopup("<b>Umm akschually</b><br>That is a hydrogen bo-").openPopup();
-// marker.addTo(map);
+function ReadCreateMarker(titel, omschrijving, latitude, longitude){
+    let marker = new L.Marker([latitude, longitude]);
+    marker.bindPopup("<b>" + titel + "</b>" + omschrijving +"<br>").openPopup();
+    marker.addTo(map);
+}
 
 var popup = L.popup();
 
