@@ -60,26 +60,24 @@ $klacht = new klacht($db->conn);
             </div>
         </div>
 
-        <div style="margin-top: 180px;" class="newsContainer">
-            <h2 style="text-align: center;">Wat extra informatie</h2>
-            <div style="color: #000;" class="textboxContainer">
-
-                <div style="border-bottom: #86C232 5px solid;" class="textbox" id="klacht">
-                    <h4 style="color: #61892F;">Titel van de klacht.</h4>
-                    <p>Hier kunt u kort af vertellen wat de klacht is, is er iets kapot, heeft uw overlast of zijn er andere redenen waar u een klacht voor wilt indienen?</p>
+        <div class="newsContainer">
+            <h2 style="text-align: center;">News</h2>
+            <div class="newsboxContainer">
+                <div class="newsbox">
+                    <img width="400px" height="150px" src="./includes/images/newFoto1.jpg" alt="foto van een hal">
+                    <h4>Heel veel eten enzo weet je wel!</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
                 </div>
-
-
-                <div style="border-bottom: #86C232 5px solid;" class="textbox" id="klacht">
-                    <h4 style="color: #61892F;">Om schrijving van de klacht.</h4>
-                    <p>Hier kunt u een beschrijven plaatsen van de klacht zodat we prc weten wat er aan de hand is en wat we er tegen kunnen doen.</p>
+                <div class="newsbox">
+                    <img width="400px" height="150px" src="./includes/images/newFoto2.jpg" alt="foto van een hal">
+                    <h4>We hebben oude huizen!!!!!</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
                 </div>
-
-                <div style="border-bottom: #86C232 5px solid;" class="textbox" id="klacht">
-                    <h4 style="color: #61892F;">Datum van de klacht.</h4>
-                    <p>Hier kunt u de datum invoeren wanneer u uw klacht heeft ingedient, of wanneer de klacht ontstont</p>
+                <div class="newsbox">
+                    <img width="400px" height="150px" src="./includes/images/newFoto3.jpg" alt="foto van een hal">
+                    <h4>NEWS!!!!</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
                 </div>
-
             </div>
         </div>
 

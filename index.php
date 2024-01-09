@@ -66,12 +66,12 @@ $klacht = new klacht($db->conn);
                     <h2 style="color: #86C232;">U kunt hier ook inloggen</h2>
                     <div class="input-box">
                         <label>Email adress</label>
-                        <input type="text" placeholder="typ hier uw emailadress in">
+                        <input type="email" placeholder="typ hier uw emailadress in">
                     </div>
 
                     <div class="input-box">
-                        <label>Email adress</label>
-                        <input type="text" placeholder="typ hier uw emailadress in">
+                        <label>wachtwoord</label>
+                        <input type="password" placeholder="typ hier uw emailadress in">
                     </div>
 
                     <button>Submit</button>
@@ -123,7 +123,7 @@ $klacht = new klacht($db->conn);
             </div>
         </div>
         <div class="footerBottom">
-            <p>Copyright &copy;2023; Designed bij <span class="designers">Vincent, Valentijn en Florian</span></p>
+            <p>Copyright &copy;<?php echo date("Y"); ?>; Designed bij <span class="designers">Vincent, Valentijn en Florian</span></p>
         </div>
     </footer>
 </body>
