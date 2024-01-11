@@ -10,6 +10,12 @@
     box-sizing: border-box;
 }
 
+#map{
+    width: 60%;
+    height: 60vh;
+    margin-top: 50px;
+}
+
 /* navbar */
 nav {
     position: fixed;
@@ -139,9 +145,16 @@ li {
 .userpaginaMain {
     display: flex;
     background-color: #474B4F;
-    height: 130vh;
+    /* height: 150vh; */
     justify-content: flex-start;
     flex-direction: column;
+}
+
+#map{
+    width: 60%;
+    height: 60vh;
+    padding-top: 50px;
+    margin: auto;
 }
 
 /** textbox/links */
@@ -282,10 +295,4 @@ li {
     letter-spacing: 1px;
     font-weight: 400;
     margin: 0px 5px;
-}
-
-#map{
-    width: 60%;
-    height: 60vh;
-    margin-top: 50px;
 }

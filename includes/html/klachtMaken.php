@@ -14,7 +14,8 @@ $klacht = new klacht($db->conn);
     <link rel="stylesheet" href="../css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Gemeetne Rotterdam Klachten | Kacht Aanmaken</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <title>Gemeente Rotterdam Klachten | Klacht Aanmaken</title>
 </head>
 
 <body>
@@ -55,10 +56,18 @@ $klacht = new klacht($db->conn);
                         <input type="date" placeholder="typ hier uw emailadress in">
                     </div>
 
+                    <input type="hidden" id="latitude" name="latitude" placeholder="latitude">
+                    <input type="hidden" id="longitude" name="longitude" placeholder="longitude">
+
                     <button>Submit</button>
                 </form>
             </div>
         </div>
+
+        <div id="map"></div>
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <script src="scripts.js"></script>
 
         <div class="newsContainer">
             <h2 style="text-align: center;">News</h2>
