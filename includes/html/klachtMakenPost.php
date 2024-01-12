@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once '../classes/klacht.php';
+$db = new Database("localhost", "root", "", "project_10");
 $klacht = new klacht($db);
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect value of input field
@@ -17,4 +17,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $klacht->create($titel, $omschrijving, $datum, $coordinaten, 1);
     }
-  }
+}
