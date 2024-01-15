@@ -69,7 +69,7 @@ class Account{
     }
 
     public function readAccounts(){
-        $db = new Database("localhost","root","","donkey_travel");
+        $db = new Database("localhost","root","","project10");
 
         // Alle account gegevens in de database opvragen
         $accountList = $db->SQLCommando("select * from account where 1",[]);

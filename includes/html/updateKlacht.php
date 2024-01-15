@@ -59,7 +59,7 @@ $klacht = new klacht($db->conn);
 
         <?php
 
-        $klacht->update("Te veel Tijgers", "er zijn allemaal gorilla's uit blijdorp ontsnapt", "2024-20-04", "z243 x546 y-6", 1);
+        $klacht->update("Te veel Tijgers", "er zijn allemaal gorilla's uit blijdorp ontsnapt", "2024-20-04", "z243", "x546 y-6", 1);
 
         ?>
 

@@ -10,12 +10,6 @@
     box-sizing: border-box;
 }
 
-#map{
-    width: 60%;
-    height: 60vh;
-    margin-top: 50px;
-}
-
 /* navbar */
 nav {
     position: fixed;
@@ -64,6 +58,7 @@ li {
     flex-direction: row;
     align-content: center;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 /** form */
@@ -152,8 +147,7 @@ li {
 
 #map{
     width: 60%;
-    height: 60vh;
-    padding-top: 50px;
+    height: 70vh;
     margin: auto;
 }
 
