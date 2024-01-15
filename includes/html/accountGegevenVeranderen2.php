@@ -28,14 +28,14 @@ session_start();
             $accountWachtwoord = $_POST["wachtwoordvak"];
 
             // account class aanvragen
-            require_once "account.php";
+            require_once "../classes/account.php";
 
             $account = new Account($accountNaam, $accountWachtwoord, $accountEmail, $accountID);
             
             $account->GegevenVeranderenWachtWoordCheck($_SESSION["email"], $accountWachtwoord, $accountID);
 
             echo "<br>";
-            echo "<button><a href='index.php'> Terug naar het menu </a></button>";
+            echo "<button><a href='userPagina.php'> Terug naar het menu </a></button>";
 
             $_SESSION["naam"] = $account->getAccountNaam();
             ?>

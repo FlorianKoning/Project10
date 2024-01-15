@@ -5,8 +5,8 @@ require "account.php";
 
 //! Vergeet niet POST te veranderen naar SESSION bij merge en links naar pagina"s :P
 
-$account = new Account($_POST["email"]);
-$account->searchAccountEmail($_POST["email"]);
+$account = new Account($_SESSION["email"]);
+$account->searchAccountEmail($_SESSION["email"]);
 
 $_SESSION["id"] = $account->getAccountID();
 $_SESSION["email"] = $_POST["email"];
@@ -38,7 +38,7 @@ $_SESSION["email"] = $_POST["email"];
                 Wachtwoord: <input type="password" name="wachtwoordvak" required><br>
                 <input type="submit">
             </form>
-            <a href="index.php"><button>Annuleren</button></a>
+            <a href="userPagina.php"><button>Annuleren</button></a>
         </div>
         
     </main>
