@@ -12,7 +12,7 @@ class klacht
         
     }
 
-    // *create klant
+    //* Create klant
     public function create(string $titel, string $omschrijving, string $tijdstip, string $latitude, string $longitude, int $accountID)
     {
         // de sql code en de prepare om een nieuwe klacht te maken
@@ -25,7 +25,7 @@ class klacht
         header("Location: http://localhost/Project10/includes/html/klachtGelukt.php");
     }
 
-    // *admin read klachten
+    //* Admin read klachten
     public function readAdmin(){
         
         $db = new Database("localhost","root","","project_10");
@@ -47,7 +47,7 @@ class klacht
         }
     }
 
-    // * Read klacht
+    //* Read klacht
     public function readKlacht()
     {
         $db = new Database("localhost","root","","project_10");
@@ -73,7 +73,7 @@ class klacht
         echo "</table>";
     }
 
-    // *update klant
+    //* Update klant
     public function update(string $titel, string $omschrijving, string $tijdstip, string $latitude, string $longitude, $ID)
     {
         // de sql code en de prepare om een klacht te updaten
@@ -86,12 +86,14 @@ class klacht
         header("Location: http://localhost/Project10/includes/html/klachtGelukt.php");
     }
 
+    //* Delte alleen 1 account met ID van de klacht
     public function delete($ID) {
         // de sql code voor delete
         $db = new Database("localhost", "root", "", "project_10");
         $db->SQLCommando('DELETE FROM klacht WHERE ID = ?', [$ID]);
     }
 
+    //* Delete alle klachten dat de accountID hebben dat woord gegeven
     public static function deleteAllAccountId($accountID) {
         // de sql code voor de delete all met account id
         $db = new Database("localhost", "root", "", "project_10");
