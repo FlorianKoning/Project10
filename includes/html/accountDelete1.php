@@ -42,6 +42,7 @@ $_SESSION["email"];
             <input type='password' name='wachtwoordvak' required><br><br>
             <input type='submit'>
         </form> 
+        <h2>DIT ZAL AL UW KLACHTEN OOK VERWIJDEREN!!!!!</h2>
         <a href="userPagina.php"><button>Annuleren</button></a>
     </div>
     

@@ -27,10 +27,13 @@
         $klacht = new klacht($db->conn);
 
         $account = new Account();
+        $account->searchAccountEmail($accountEmail);
+        $accountID = $account->getAccountID();
 
-        // supplier gegevens verwijderen
+        // account gegevens verwijderen
         if ($account->VerwijderCheck($accountEmail, $accountWachtwoord) == true){
             $account->deleteAccount($accountEmail);
+            $klacht->deleteAllAccountId($accountID);
             echo "<p>De gegevens zijn verwijderd. <br></p>";
         }
         else{
