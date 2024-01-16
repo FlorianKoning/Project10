@@ -4,9 +4,9 @@ session_start();
 require_once '../classes/klacht.php';
 $klacht = new klacht();
 
-if ($_SERVER["REQUEST_METHOD"] == "post") {
+// zet de klacht id in een variable
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ID = $_POST['UPDATE'];
-    echo $ID;
 }
 ?>
 <!DOCTYPE html>
