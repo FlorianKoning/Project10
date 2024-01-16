@@ -39,21 +39,21 @@ $klacht = new klacht($db->conn);
 
         <div class="container">
             <div class="formContainer" style="height: 480px;">
-                <form action="#" method="post" class="form">
+                <form action="klachtMakenPost.php" method="post" class="form">
                     <h2 style="color: #86C232;">Maak hier uw klacht aan</h2>
                     <div class="input-box">
                         <label>Wat is uw Klacht</label>
-                        <input type="text" placeholder="Typ hier de klacht in">
+                        <input name="title" type="text" placeholder="Typ hier de klacht in">
                     </div>
 
                     <div class="input-box">
                         <label>omschrijving van uw klacht</label>
-                        <input type="text" placeholder="typ hier een kleine beschrijving">
+                        <input name="omschrijving" type="text" placeholder="typ hier een kleine beschrijving">
                     </div>
 
                     <div class="input-box">
                         <label>Wat is de datum van uw klacht</label>
-                        <input type="date" placeholder="typ hier uw emailadress in">
+                        <input name="datum" type="date" placeholder="typ hier uw emailadress in">
                     </div>
 
                     <button>Submit</button>
