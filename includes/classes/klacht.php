@@ -51,6 +51,24 @@ class klacht
         }
     }
 
+    // * Read klacht
+    public function readKlacht()
+    {
+        $db = new Database("localhost","root","","project_10");
+
+        // Alle klacht gegevens in de database
+        $klachtlijst = $db->SQLCommando("select * from klacht where 1",[]);
+
+        foreach($klachtlijst as $klacht){
+            echo "<p>ID: " . $klacht["ID"] . "<br>";
+            echo "Titel: " . $klacht["Titel"] . "<br>";
+            echo "Omschrijving: " . $klacht["Omschrijving"] . "<br>";
+            echo "Tijdstip: " . $klacht["Tijdstip"] . "<br>";
+            echo "Coordinaten: " . $klacht["Coordinaten"] . "<br>";
+            echo "klantID: " . $klacht["klantID"] . "<br></p>";
+        }
+    }
+
     // *update klacht
     public function update(string $titel, string $omschrijving, string $tijdstip, string $latitude, string $longitude, $ID)
     {
