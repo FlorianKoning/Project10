@@ -33,7 +33,7 @@
             echo "<p>Uw account is toegevoegd</p><br>";
             ?>
 
-            <button><a href='userPagina.php'> Terug naar het menu </a></button><br><br>
+            <button><a href='index.php'> Terug naar het menu </a></button><br><br>
         </div>
         
     </main>

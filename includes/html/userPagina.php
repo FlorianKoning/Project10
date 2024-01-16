@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['email'] = "";
+$_SESSION['email'] = $_POST["email"];
 $_SESSION['ingelogt'] = false;
 
 require_once '../classes/klacht.php';
@@ -92,7 +92,7 @@ $klacht = new klacht();
             </div>
         </div>
         <div class="footerBottom">
-            <p>Copyright &copy;<?php echo date("Y"); ?>; Designed bij <span class="designers">Vincent, Valentijn en Florian</span></p>
+            <p>Copyright &copy;<?php echo date("Y"); echo $_SESSION["email"] ?>; Designed bij <span class="designers">Vincent, Valentijn en Florian</span></p>
         </div>
     </footer>
 

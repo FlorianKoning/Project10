@@ -25,7 +25,7 @@
                 <input type="submit" value="Maak een account">
                 <br><br>
             </form>
-            <a href="userPagina.php"><button>Annuleren</button></a>
+            <a href="index.php"><button>Annuleren</button></a>
         </div>
     </main>
     <footer>
