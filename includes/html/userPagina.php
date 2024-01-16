@@ -1,7 +1,6 @@
 <?php
 session_start();
-$_SESSION['email'] = $_POST["email"];
-$_SESSION['ingelogt'] = false;
+$_SESSION['email'];
 
 require_once '../classes/klacht.php';
 $klacht = new klacht();
@@ -35,7 +34,7 @@ $klacht = new klacht();
                             <a style="color: white;" class="nav-link smallerText" href="klachtMaken.php"><i>Klacht aanmaken</i></a>
                         </li>
                         <li class="nav-item">
-                            <a style="color: white;" class="nav-link smallerText" href="#"><i>Contact</i></a>
+                            <a style="color: white;" class="nav-link smallerText" href="userPagina.php"><i>Home</i></a>
                         </li>
                         <li class="nav-item smallerText">
                             <a style="color: white;" class="nav-link" href="https://www.google.com/maps/d/viewer?mid=1-LWtYaeSCcpYJZcBAqD9EZqlKyY&hl=nl&ll=51.903391420345116%2C4.445905000000003&z=14"><i>Kaart</i></a>
@@ -58,7 +57,7 @@ $klacht = new klacht();
     </header>
 
     <!-- al het andere van de website -->
-    <main class="userpaginaMain">
+    <main style="height: 150vh;" class="userpaginaMain">
         <div class="textboxContainer">
 
             <div class="textbox" onclick="location.href='../html/klachtMaken.php';" style="cursor: pointer;">
@@ -66,8 +65,8 @@ $klacht = new klacht();
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>
             </div>
 
-            <div class="textbox" onclick="location.href='#';" style="cursor: pointer;">
-                <h4 style="color: #61892F;">Een klacht verwijderen.</h4>
+            <div class="textbox" onclick="location.href='../html/readKlacht.php';" style="cursor: pointer;">
+                <h4 style="color: #61892F;">Al uw klachten.</h4>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>
             </div>
         </div>

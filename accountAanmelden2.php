@@ -16,7 +16,7 @@
         <div>
             <h1>Gefeliciteerd</h1>
             <?php
-            require_once "../classes/account.php";
+            require_once "./includes/classes/account.php";
 
             $accountID = NULL;
             $accountNaam = $_POST ["naamvak"];

@@ -2,8 +2,7 @@
 session_start();
 
 require_once '../classes/klacht.php';
-$db = new Database("localhost", "root", "", "project_10");
-$klacht = new klacht($db->conn);
+$klacht = new klacht();
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -42,17 +41,17 @@ $klacht = new klacht($db->conn);
                     <h2 style="color: #86C232;">Maak hier uw klacht aan</h2>
                     <div class="input-box">
                         <label>Wat is uw Klacht</label>
-                        <input name="title" type="text" placeholder="Typ hier de klacht in">
+                        <input name="title" type="text" placeholder="Typ hier de klacht in" required>
                     </div>
 
                     <div class="input-box">
                         <label>omschrijving van uw klacht</label>
-                        <input name="omschrijving" type="text" placeholder="typ hier een kleine beschrijving">
+                        <input name="omschrijving" type="text" placeholder="typ hier een kleine beschrijving" required>
                     </div>
 
                     <div class="input-box">
                         <label>Wat is de datum van uw klacht</label>
-                        <input name="datum" type="date" placeholder="typ hier uw emailadress in">
+                        <input name="datum" type="date" placeholder="typ hier uw emailadress in" required>
                     </div>
 
                     <input type="hidden" id="latitude" name="latitude" placeholder="latitude">
