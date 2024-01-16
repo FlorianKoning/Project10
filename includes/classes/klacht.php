@@ -68,8 +68,8 @@ class klacht
             echo "<td>" . $klacht["Titel"] . "</td>";
             echo "<td>" . $klacht["Omschrijving"] . "</td>";
             echo "<td>" . $klacht["Tijdstip"] . "</td>";
-            echo "<td> <form action='klachtUpdate.php' method='post'><a href='dedemegadoodoo'><button name='UPDATE' value='='" . $klacht["ID"] . "'></button></a></form></td>";
-            echo "<td> <form action='klachtDelete.php' method='post'><a href='dedemegadoodoo'><button name='DELETE' value='='" . $klacht["ID"] . "'></button></a></form></td>";
+            echo "<td> <form action='klachtUpdate.php' method='post'><input type='submit' name='UPDATE' value='='" . $klacht["ID"] . "'></button></a></form></td>";
+            echo "<td> <form action='klachtDelete.php' method='post'><input type='submit' name='DELETE' value='='" . $klacht["ID"] . "'></button></a></form></td>";
             echo "</tr>";
         }
         echo "</table>";
