@@ -51,19 +51,26 @@ class klacht
     public function readKlacht()
     {
         $db = new Database("localhost","root","","project_10");
+        $rowCount = 1;
 
         // Alle klacht gegevens in de database
         $klachtlijst = $db->SQLCommando("select * from klacht where 1",[]);
 
-        echo "<table>"; 
-        echo "<th>ID</th>";
-        echo "<th>Titel</th>";
-        echo "<th>Omschrijving</th>";
-        echo "<th>Tijdstip</th>";
+        echo "<thead>";
+        echo "<th scope='col'>#</th>";  
+        echo "<th scope='col'>ID</th>";
+        echo "<th scope='col'>Titel</th>";
+        echo "<th scope='col'>Omschrijving</th>";
+        echo "<th scope='col'>Tijdstip</th>";
+        echo "<th scope='col'>Update</th>";
+        echo "<th scope='col'>Delete</th>";
         echo "</tr>";   
+        echo "</thead>";
 
+        echo "<tbody>";
         foreach($klachtlijst as $klacht){
             echo "<tr>";
+            echo "<th scope='row'>" . $rowCount . "</th>";
             echo "<td>" . $klacht["ID"] . "</td>";
             echo "<td>" . $klacht["Titel"] . "</td>";
             echo "<td>" . $klacht["Omschrijving"] . "</td>";
@@ -71,8 +78,8 @@ class klacht
             echo "<td> <form action='klachtUpdate.php' method='POST'><button class='btn btn-primary' type='submit' name='UPDATE' value='" . $klacht["ID"] . "'>Update</button></form></td>";
             echo "<td> <form action='klachtDelete.php' method='POST'><button class='btn btn-primary' type='submit' name='DELETE' value='" . $klacht["ID"] . "'>Delete</button></form></td>";
             echo "</tr>";
+            $rowCount++;
         }
-        echo "</table>";
     }
 
     //* Update klant

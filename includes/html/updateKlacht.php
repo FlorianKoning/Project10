@@ -46,7 +46,7 @@ $klacht = new klacht($db->conn);
         </nav>
 
 
-        <div class="container-fluid">
+        <div style="height: 150vh;" class="container-fluid">
             <div class="titleContainer">
                 <h1>Welkom bij de userpagina!</h1>
                 <p>gemeente rotterdam</p>

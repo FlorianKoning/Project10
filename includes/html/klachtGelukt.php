@@ -59,7 +59,8 @@ $klacht = new klacht();
     </header>
 
     <!-- al het andere van de website -->
-    <main class="userpaginaMain">
+    <main style="height: 150vh;" class="userpaginaMain">
+
     </main>
 
     <!-- footer van de website -->

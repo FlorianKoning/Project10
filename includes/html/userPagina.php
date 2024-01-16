@@ -58,7 +58,7 @@ $klacht = new klacht();
     </header>
 
     <!-- al het andere van de website -->
-    <main class="userpaginaMain">
+    <main style="height: 150vh;" class="userpaginaMain">
         <div class="textboxContainer">
 
             <div class="textbox" onclick="location.href='../html/klachtMaken.php';" style="cursor: pointer;">
@@ -66,8 +66,8 @@ $klacht = new klacht();
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>
             </div>
 
-            <div class="textbox" onclick="location.href='#';" style="cursor: pointer;">
-                <h4 style="color: #61892F;">Een klacht verwijderen.</h4>
+            <div class="textbox" onclick="location.href='../html/readKlacht.php';" style="cursor: pointer;">
+                <h4 style="color: #61892F;">Al uw klachten.</h4>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>
             </div>
         </div>
