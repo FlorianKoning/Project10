@@ -3,17 +3,10 @@ session_start();
 $_SESSION['email'] = "";
 $_SESSION['ingelogt'] = false;
 
+require_once './includes/classes/account.php';
 require_once './includes/classes/klacht.php';
 $db = new Database("localhost", "root", "", "project_10");
 $klacht = new klacht($db->conn);
-
-if(!empty($_POST["naam"]) || !empty($_POST["wachtwoord"])){
-    $_SESSION["naam"] = $_POST["naam"];
-    $klantWachtwoord = $_POST["wachtwoord"];
-
-    $check = new Account($_SESSION["naam"], $klantWachtwoord);
-    $check->logInCheckAccount($_SESSION["naam"], $klantWachtwoord);
-}
 
 ?>
 <!DOCTYPE html>
@@ -85,6 +78,18 @@ if(!empty($_POST["naam"]) || !empty($_POST["wachtwoord"])){
                 </form>
             </div>
         </div>
+
+        <?php
+        
+        if(!empty($_POST["email"]) || !empty($_POST["wachtwoord"])){
+            $_SESSION["email"] = $_POST["email"];
+            $accountWachtwoord = $_POST["wachtwoord"];
+
+            $check = new Account($_SESSION["email"], $accountWachtwoord);
+            $check->logInCheckAccount($_SESSION["email"], $accountWachtwoord);
+        }
+        
+        ?>
 
 
         <div class="newsContainer">
