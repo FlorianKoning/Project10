@@ -137,7 +137,7 @@ class Account{
         $TheSame = password_verify($accountWachtwoord, $HashedWachtwoord);
 
         if($TheSame){
-            header("Location: http://localhost/Donkey_Travel/userPagina.php");
+            header("Location: http://localhost/project10/includes/html/userPagina.php");
         } else{
             echo "We hebben u niet gevonden, probeer opnieuw.";
         }

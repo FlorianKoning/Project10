@@ -1,32 +1,14 @@
-<?php
-session_start();
-$_SESSION['email'] = "";
-$_SESSION['ingelogt'] = false;
-
-require_once './includes/classes/klacht.php';
-$db = new Database("localhost", "root", "", "project_10");
-$klacht = new klacht($db->conn);
-
-if(!empty($_POST["naam"]) || !empty($_POST["wachtwoord"])){
-    $_SESSION["naam"] = $_POST["naam"];
-    $klantWachtwoord = $_POST["wachtwoord"];
-
-    $check = new Account($_SESSION["naam"], $klantWachtwoord);
-    $check->logInCheckAccount($_SESSION["naam"], $klantWachtwoord);
-}
-
-?>
 <!DOCTYPE html>
 <html lang="nl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="includes/css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <title>Gemeente Rotterdam Klachten | Home</title>
+    <title>Gemeente Rotterdam Klachten | Admin Login</title>
 </head>
 
 <body>
@@ -42,11 +24,14 @@ if(!empty($_POST["naam"]) || !empty($_POST["wachtwoord"])){
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a style="color: white;" class="nav-link smallerText" href="#"><i>Contact</i></a>
+                        </li>
                         <li class="nav-item smallerText">
                             <a style="color: white;" class="nav-link" href="https://www.google.com/maps/d/viewer?mid=1-LWtYaeSCcpYJZcBAqD9EZqlKyY&hl=nl&ll=51.903391420345116%2C4.445905000000003&z=14"><i>Kaart</i></a>
                         </li>
                         <li class="nav-item">
-                            <a style="color: white;" class="nav-link active" href="accountAanmelden1.php">Aanmelen</a>
+                            <a style="color: white;" class="nav-link active" href="#">Log in</a>
                         </li>
                     </ul>
                 </div>
@@ -70,15 +55,15 @@ if(!empty($_POST["naam"]) || !empty($_POST["wachtwoord"])){
         <div class="container">
             <div class="formContainer">
                 <form action="#" class="form" method="POST">
-                    <h2 style="color: #86C232;">U kunt hier ook inloggen</h2>
+                    <h2 style="color: #86C232;">Dit is de Admin Log In.</h2>
                     <div class="input-box">
-                        <label>Email adress</label>
-                        <input type="email" name="email" placeholder="typ hier uw emailadress in">
+                        <label>naam</label>
+                        <input type="text" name="naam" placeholder="typ hier de naam in">
                     </div>
 
                     <div class="input-box">
                         <label>wachtwoord</label>
-                        <input type="password" name="wachtwoord" placeholder="typ hier uw wachtwoord in">
+                        <input type="password" name="wachtwoord" placeholder="typ hier het wachtwoord in">
                     </div>
 
                     <button>Submit</button>
@@ -87,26 +72,14 @@ if(!empty($_POST["naam"]) || !empty($_POST["wachtwoord"])){
         </div>
 
 
-        <div class="newsContainer">
-            <h2 style="text-align: center;">News</h2>
-            <div class="newsboxContainer">
-                <div class="newsbox">
-                    <img width="400px" height="150px" src="./includes/images/newFoto1.jpg" alt="foto van een hal">
-                    <h4>Heel veel eten enzo weet je wel!</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
-                </div>
-                <div class="newsbox">
-                    <img width="400px" height="150px" src="./includes/images/newFoto2.jpg" alt="foto van een hal">
-                    <h4>We hebben oude huizen!!!!!</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
-                </div>
-                <div class="newsbox">
-                    <img width="400px" height="150px" src="./includes/images/newFoto3.jpg" alt="foto van een hal">
-                    <h4>NEWS!!!!</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
-                </div>
-            </div>
-        </div>
+        <?php
+        
+        if(!empty($_POST["naam"]) || !empty($_POST["wachtwoord"])){
+            if(($_POST["naam"] == "admin" ) || $_POST["wachtwoord"] == "admin"){
+                header("Location: http://localhost/project10/includes/html/readAdminKlachten.php");
+            }
+        }
+        ?>
 
     </main>
 
