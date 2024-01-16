@@ -3,6 +3,11 @@ session_start();
 
 require_once '../classes/klacht.php';
 $klacht = new klacht();
+
+if ($_SERVER["REQUEST_METHOD"] == "post") {
+    $ID = $_POST['UPDATE'];
+    echo $ID;
+}
 ?>
 <!DOCTYPE html>
 <html lang="nl">
