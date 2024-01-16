@@ -67,12 +67,6 @@ $klacht = new klacht();
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>
             </div>
 
-
-            <div class="textbox" onclick="location.href='../html/updateKlacht.php';" style="cursor: pointer;">
-                <h4 style="color: #61892F;">Update Klacht.</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>
-            </div>
-
             <div class="textbox" onclick="location.href='#';" style="cursor: pointer;">
                 <h4 style="color: #61892F;">Een klacht verwijderen.</h4>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>

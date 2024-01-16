@@ -25,18 +25,15 @@ class klacht
     }
 
     // *update klant
-    public function update(string $titel, string $omschrijving, string $tijdstip, string $coordinaten, $ID)
+    public function update(string $titel, string $omschrijving, string $tijdstip, string $latitude, string $longitude, $ID)
     {
         //* de sql code en de prepare om een klacht te updaten
-        $sql = "UPDATE klacht SET Titel = ?, Omschrijving = ?, Tijdstip = ?, Coordinaten = ? WHERE ID = ?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute([$titel, $omschrijving, $tijdstip, $coordinaten, $ID]);
+        $db = new Database("localhost", "root", "", "project_10");
+        $db->SQLCommando('UPDATE klacht SET Titel = ?, Omschrijving = ?, Tijdstip = ?, latitude = ?, longitude = ? WHERE ID = ?', [$titel, $omschrijving, $tijdstip, $latitude, $longitude, $ID]);
 
-        //* checkt of $stmt is executed en laat dan weten of de klacht is geupdate of niet
-        if ($stmt) {
-            echo 'Je klacht is bij gewerkt';
-        } else {
-            echo "Er is iets fout gegaan, kon de klacht niet bijwerken!";
-        }
+        
+
+        // Redirect naar klachtGelukt.php
+        header("Location: http://localhost/Project10/includes/html/klachtGelukt.php");
     }
 }
