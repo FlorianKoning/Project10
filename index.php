@@ -63,16 +63,16 @@ $klacht = new klacht($db->conn);
 
         <div class="container">
             <div class="formContainer">
-                <form action="#" class="form">
+                <form action="./includes/html/userPagina.php" class="form" method="POST">
                     <h2 style="color: #86C232;">U kunt hier ook inloggen</h2>
                     <div class="input-box">
                         <label>Email adress</label>
-                        <input type="email" placeholder="typ hier uw emailadress in">
+                        <input type="email" name="email" placeholder="typ hier uw emailadress in">
                     </div>
 
                     <div class="input-box">
                         <label>wachtwoord</label>
-                        <input type="password" placeholder="typ hier uw wachtwoord in">
+                        <input type="password" name="wachtwoord" placeholder="typ hier uw wachtwoord in">
                     </div>
 
                     <button>Submit</button>
