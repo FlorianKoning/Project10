@@ -115,11 +115,11 @@ class Account{
         ]);
     }
 
-    public function deleteAccount($accountNaam){
+    public function deleteAccount($accountEmail){
         $db = new Database("localhost","root","","project_10");
         
         // Checken waar de account id in de database overeenkomt met de gegeven account id
-        $db->SQLCommando("delete from account where naam  = :naam", ["naam" => $accountNaam]);
+        $db->SQLCommando("delete from account where Email  = :Email", ["Email" => $accountEmail]);
     }
 
     public function logInCheckAccount($accountEmail, $accountWachtwoord){
@@ -169,13 +169,13 @@ class Account{
         }
     }
 
-    public function VerwijderCheck($accountNaam, $accountWachtwoord){
+    public function VerwijderCheck($accountEmail, $accountWachtwoord){
         // Connectie maken met de database 
         $db = new Database("localhost","root","","project_10");
 
         $HashedWachtwoord = "Niks";
 
-        $logins = $db->SQLCommando("select * from account where Naam = :Naam", ["Naam" => $accountNaam]);
+        $logins = $db->SQLCommando("select * from account where Email = :Email", ["Email" => $accountEmail]);
 
         foreach($logins as $login){
             $HashedWachtwoord = $login["Wachtwoord"];
