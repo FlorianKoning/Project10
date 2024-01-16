@@ -69,7 +69,7 @@ class Account{
     }
 
     public function readAccounts(){
-        $db = new Database("localhost","root","","donkey_travel");
+        $db = new Database("localhost","root","","project10");
 
         // Alle account gegevens in de database opvragen
         $accountList = $db->SQLCommando("select * from account where 1",[]);
@@ -115,11 +115,11 @@ class Account{
         ]);
     }
 
-    public function deleteAccount($accountNaam){
-        $db = new Database("localhost","root","","donkey_travel");
+    public function deleteAccount($accountEmail){
+        $db = new Database("localhost","root","","project_10");
         
         // Checken waar de account id in de database overeenkomt met de gegeven account id
-        $db->SQLCommando("delete from accounten where naam  = :naam", ["naam" => $accountNaam]);
+        $db->SQLCommando("delete from account where Email  = :Email", ["Email" => $accountEmail]);
     }
 
     public function logInCheckAccount($accountEmail, $accountWachtwoord){
@@ -137,7 +137,7 @@ class Account{
         $TheSame = password_verify($accountWachtwoord, $HashedWachtwoord);
 
         if($TheSame){
-            header("Location: http://localhost/Donkey_Travel/homePagina.php");
+            header("Location: http://localhost/Donkey_Travel/userPagina.php");
         } else{
             echo "We hebben u niet gevonden, probeer opnieuw.";
         }
@@ -169,13 +169,13 @@ class Account{
         }
     }
 
-    public function VerwijderCheck($accountNaam, $accountWachtwoord){
+    public function VerwijderCheck($accountEmail, $accountWachtwoord){
         // Connectie maken met de database 
         $db = new Database("localhost","root","","project_10");
 
         $HashedWachtwoord = "Niks";
 
-        $logins = $db->SQLCommando("select * from account where Naam = :Naam", ["Naam" => $accountNaam]);
+        $logins = $db->SQLCommando("select * from account where Email = :Email", ["Email" => $accountEmail]);
 
         foreach($logins as $login){
             $HashedWachtwoord = $login["Wachtwoord"];

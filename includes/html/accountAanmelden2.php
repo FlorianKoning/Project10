@@ -16,7 +16,7 @@
         <div>
             <h1>Gefeliciteerd</h1>
             <?php
-            require_once "account.php";
+            require_once "../classes/account.php";
 
             $accountID = NULL;
             $accountNaam = $_POST ["naamvak"];
@@ -33,7 +33,7 @@
             echo "<p>Uw account is toegevoegd</p><br>";
             ?>
 
-            <button><a href='index.php'> Terug naar het menu </a></button><br><br>
+            <button><a href='userPagina.php'> Terug naar het menu </a></button><br><br>
         </div>
         
     </main>
