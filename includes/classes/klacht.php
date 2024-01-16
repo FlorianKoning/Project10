@@ -48,13 +48,13 @@ class klacht
     }
 
     //* Read klacht
-    public function readKlacht()
+    public function readKlacht($accountID)
     {
         $db = new Database("localhost","root","","project_10");
         $rowCount = 1;
 
         // Alle klacht gegevens in de database
-        $klachtlijst = $db->SQLCommando("select * from klacht where 1",[]);
+        $klachtlijst = $db->SQLCommando("select * from klacht where accountID = ?",[$accountID]);
 
         echo "<thead>";
         echo "<th scope='col'>#</th>";  

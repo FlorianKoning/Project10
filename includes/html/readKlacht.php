@@ -1,8 +1,14 @@
 <?php
 session_start();
+$_SESSION['email'];
 
 require_once '../classes/klacht.php';
+require_once '../classes/account.php';
 $klacht = new klacht();
+$account = new Account();
+
+$account->searchAccountEmail($_SESSION['email']);
+$accountID = $account->getAccountID();
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -34,7 +40,7 @@ $klacht = new klacht();
                             <a style="color: white;" class="nav-link smallerText" href="klachtMaken.php"><i>Klacht aanmaken</i></a>
                         </li>
                         <li class="nav-item">
-                            <a style="color: white;" class="nav-link smallerText" href="#"><i>Contact</i></a>
+                            <a style="color: white;" class="nav-link smallerText" href="userPagina.php"><i>Home</i></a>
                         </li>
                         <li class="nav-item smallerText">
                             <a style="color: white;" class="nav-link" href="https://www.google.com/maps/d/viewer?mid=1-LWtYaeSCcpYJZcBAqD9EZqlKyY&hl=nl&ll=51.903391420345116%2C4.445905000000003&z=14"><i>Kaart</i></a>
@@ -62,7 +68,8 @@ $klacht = new klacht();
             <div>
                 <table class="table table-striped table-dark">
                     <thead>
-                        <?php $klacht->readKlacht()?>
+                    
+                        <?php $klacht->readKlacht($accountID)?>
                     </thead>
                 </table>
             </div>
