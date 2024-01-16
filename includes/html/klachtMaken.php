@@ -63,9 +63,10 @@ $klacht = new klacht($db->conn);
             </div>
         </div>
 
-        <div class="newsContainer">
-            
-        </div>
+        <div id="map"></div>
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <script src="../html/map.js"></script>
 
 
     </main>
