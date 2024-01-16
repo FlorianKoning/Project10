@@ -119,7 +119,7 @@ class Account{
         $db = new Database("localhost","root","","donkey_travel");
         
         // Checken waar de account id in de database overeenkomt met de gegeven account id
-        $db->SQLCommando("delete from accounten where naam  = :naam", ["naam" => $accountNaam]);
+        $db->SQLCommando("delete from account where naam  = :naam", ["naam" => $accountNaam]);
     }
 
     public function logInCheckAccount($accountEmail, $accountWachtwoord){
