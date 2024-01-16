@@ -86,9 +86,15 @@ class klacht
         header("Location: http://localhost/Project10/includes/html/klachtGelukt.php");
     }
 
-    public static function delete($ID) {
+    public function delete($ID) {
         // de sql code voor delete
         $db = new Database("localhost", "root", "", "project_10");
         $db->SQLCommando('DELETE FROM klacht WHERE ID = ?', [$ID]);
+    }
+
+    public static function deleteAllAccountId($accountID) {
+        // de sql code voor de delete all met account id
+        $db = new Database("localhost", "root", "", "project_10");
+        $db->SQLCommando('DELETE FROM klacht WHERE accountID = ?', [$accountID]);
     }
 }
