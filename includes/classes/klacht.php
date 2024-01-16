@@ -59,14 +59,22 @@ class klacht
         // Alle klacht gegevens in de database
         $klachtlijst = $db->SQLCommando("select * from klacht where 1",[]);
 
+        echo "<table>"; 
+        echo "<th>ID</th>";
+        echo "<th>Titel</th>";
+        echo "<th>Omschrijving</th>";
+        echo "<th>Tijdstip</th>";
+        echo "</tr>";   
+
         foreach($klachtlijst as $klacht){
-            echo "<p>ID: " . $klacht["ID"] . "<br>";
-            echo "Titel: " . $klacht["Titel"] . "<br>";
-            echo "Omschrijving: " . $klacht["Omschrijving"] . "<br>";
-            echo "Tijdstip: " . $klacht["Tijdstip"] . "<br>";
-            echo "Coordinaten: " . $klacht["Coordinaten"] . "<br>";
-            echo "klantID: " . $klacht["klantID"] . "<br></p>";
+            echo "<tr>";
+            echo "<td>" . $klacht["ID"] . "</td>";
+            echo "<td>" . $klacht["Titel"] . "</td>";
+            echo "<td>" . $klacht["Omschrijving"] . "</td>";
+            echo "<td>" . $klacht["Tijdstip"] . "</td>";
+            echo "</tr>";
         }
+        echo "</table>";
     }
 
     // *update klacht
