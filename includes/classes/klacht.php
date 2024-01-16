@@ -90,16 +90,5 @@ class klacht
         // de sql code voor delete
         $db = new Database("localhost", "root", "", "project_10");
         $db->SQLCommando('DELETE FROM klacht WHERE ID = ?', [$ID]);
-        //* de sql code en de prepare om een nieuwe klacht te maken
-        $sql = "INSERT INTO klacht (Titel, Omschrijving, Tijdstip, latitude, longitude, accountID) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute([$titel, $omschrijving, $tijdstip, $latitude, $longitude, $accountID]);
-
-        //* checkt of $stmt is executed en laat dan weten of de klacht is aangemaakt of niet
-        if ($stmt) {
-            echo "<p style='color: white;'>Gelukt om Nieuwe klacht in te dienen</p>";
-        } else {
-            echo "<p>Er is iets fout gegaan, kon geen nieuwe klacht aanmaken!</p>";
-        }
     }
 }
