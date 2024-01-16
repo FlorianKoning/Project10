@@ -39,7 +39,7 @@ $klacht = new klacht($db->conn);
 
         <div class="container">
             <div class="formContainer" style="height: 480px;">
-                <form action="klachtMakenPost.php" method="post" class="form">
+                <form action="klachtMakenPost.php" method="POST" class="form">
                     <h2 style="color: #86C232;">Maak hier uw klacht aan</h2>
                     <div class="input-box">
                         <label>Wat is uw Klacht</label>
@@ -62,7 +62,7 @@ $klacht = new klacht($db->conn);
         </div>
 
         <div class="newsContainer">
-
+            
         </div>
 
 

@@ -6,27 +6,22 @@ require_once 'connect.php';
 
 class klacht
 {
-    private $conn;
 
-    public function __construct($db)
+    public function __construct()
     {
-        $this->conn = $db;
+        
     }
 
     // *create klant
-    public function create(string $titel, string $omschrijving, string $tijdstip, string $coordinaten, int $accountID)
+    public function create(string $titel, string $omschrijving, string $tijdstip, string $latitude, string $longitude, int $accountID)
     {
         //* de sql code en de prepare om een nieuwe klacht te maken
-        $sql = "INSERT INTO klacht (Titel, Omschrijving, Tijdstip, Coordinaten, accountID) VALUES (?, ?, ?, ?, ?)";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute([$titel, $omschrijving, $tijdstip, $coordinaten, $accountID]);
+        $db = new Database("localhost", "root", "", "project_10");
+        $db->SQLCommando('INSERT INTO klacht (Titel, Omschrijving, Tijdstip, latitude, longitude, accountID) VALUES (?, ?, ?, ?, ?, ?)', 
+            [$titel, $omschrijving, $tijdstip, $latitude, $longitude, $accountID]);
 
-        //* checkt of $stmt is executed en laat dan weten of de klacht is aangemaakt of niet
-        if ($stmt) {
-            echo "<p style='color: white;'>Gelukt om Nieuwe klacht in te dienen</p>";
-        } else {
-            echo "<p>Er is iets fout gegaan, kon geen nieuwe klacht aanmaken!</p>";
-        }
+        // Redirect naar klachtGelukt.php
+        header("Location: http://localhost/Project10/includes/html/klachtGelukt.php");
     }
 
     // *update klant

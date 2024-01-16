@@ -52,35 +52,14 @@ $klacht = new klacht();
 
         <div class="container-fluid">
             <div class="titleContainer">
-                <h1>Welkom bij de userpagina!</h1>
-                <p>gemeente rotterdam</p>
+                <h1>Gelukt om klacht aan te maken!</h1>
+                <a href="userPagina.php"><button type="button" class="btn btn-primary">Terug</button></a>
             </div>
         </div>
     </header>
 
     <!-- al het andere van de website -->
     <main class="userpaginaMain">
-        <div class="textboxContainer">
-
-            <div class="textbox" onclick="location.href='../html/klachtMaken.php';" style="cursor: pointer;">
-                <h4 style="color: #61892F;">Een klacht aanmaken.</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>
-            </div>
-
-
-            <div class="textbox" onclick="location.href='../html/updateKlacht.php';" style="cursor: pointer;">
-                <h4 style="color: #61892F;">Update Klacht.</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>
-            </div>
-
-            <div class="textbox" onclick="location.href='#';" style="cursor: pointer;">
-                <h4 style="color: #61892F;">Een klacht verwijderen.</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>
-            </div>
-
-        </div>
-
-
     </main>
 
     <!-- footer van de website -->

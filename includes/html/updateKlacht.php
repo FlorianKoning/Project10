@@ -58,12 +58,52 @@ $klacht = new klacht($db->conn);
     <!-- al het andere van de website -->
     <main class="userpaginaMain">
 
+    <div class="container">
+            <div class="formContainer" style="height: 480px;">
+                <form method="GET" class="form">
+                    <h2 style="color: #86C232;">Maak hier uw klacht aan</h2>
+                    <div class="input-box">
+                        <label>Wat is uw Klacht</label>
+                        <input name="title" type="text" placeholder="Typ hier de klacht in">
+                    </div>
+
+                    <div class="input-box">
+                        <label>omschrijving van uw klacht</label>
+                        <input name="omschrijving" type="text" placeholder="typ hier een kleine beschrijving">
+                    </div>
+
+                    <div class="input-box">
+                        <label>Wat is de datum van uw klacht</label>
+                        <input name="datum" type="date" placeholder="typ hier uw emailadress in">
+                    </div>
+
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
+
         <?php
-
-        $klacht->update("Te veel Tijgers", "er zijn allemaal gorilla's uit blijdorp ontsnapt", "2024-20-04", "z243 x546 y-6", 1);
-
+        session_start();
+        require_once '../classes/klacht.php';
+        $db = new Database("localhost", "root", "", "project_10");
+        $klacht = new klacht();
+        
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            // collect value of input field
+            $titel = $_POST['title'];
+            $omschrijving = $_POST['omschrijving'];
+            $datum = $_POST['datum'];
+            $latitude = 4.793248;
+            $longitude = 7.0834;
+            $accountID = 1;
+        
+            if (empty($titel) || empty($omschrijving) || empty($datum)) {
+                echo "Er is iets mis gegaan, probeer het nog een keer.";
+            } else {
+                $klacht->create($titel, $omschrijving, $datum, $latitude, $longitude, 1);
+            }
+        }
         ?>
-
     </main>
 
     <!-- footer van de website -->
