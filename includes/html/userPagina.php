@@ -71,7 +71,6 @@ $klacht = new klacht();
                 <h4 style="color: #61892F;">Een klacht verwijderen.</h4>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>
             </div>
-
         </div>
 
 

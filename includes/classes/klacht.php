@@ -15,10 +15,11 @@ class klacht
     // *create klant
     public function create(string $titel, string $omschrijving, string $tijdstip, string $latitude, string $longitude, int $accountID)
     {
-        //* de sql code en de prepare om een nieuwe klacht te maken
+        // de sql code en de prepare om een nieuwe klacht te maken
         $db = new Database("localhost", "root", "", "project_10");
+        
         $db->SQLCommando('INSERT INTO klacht (Titel, Omschrijving, Tijdstip, latitude, longitude, accountID) VALUES (?, ?, ?, ?, ?, ?)', 
-            [$titel, $omschrijving, $tijdstip, $latitude, $longitude, $accountID]);
+        [$titel, $omschrijving, $tijdstip, $latitude, $longitude, $accountID]);
 
         // Redirect naar klachtGelukt.php
         header("Location: http://localhost/Project10/includes/html/klachtGelukt.php");
@@ -27,13 +28,19 @@ class klacht
     // *update klant
     public function update(string $titel, string $omschrijving, string $tijdstip, string $latitude, string $longitude, $ID)
     {
-        //* de sql code en de prepare om een klacht te updaten
+        // de sql code en de prepare om een klacht te updaten
         $db = new Database("localhost", "root", "", "project_10");
-        $db->SQLCommando('UPDATE klacht SET Titel = ?, Omschrijving = ?, Tijdstip = ?, latitude = ?, longitude = ? WHERE ID = ?', [$titel, $omschrijving, $tijdstip, $latitude, $longitude, $ID]);
 
-        
+        $db->SQLCommando('UPDATE klacht SET Titel = ?, Omschrijving = ?, Tijdstip = ?, latitude = ?, longitude = ? WHERE ID = ?', 
+        [$titel, $omschrijving, $tijdstip, $latitude, $longitude, $ID]);
 
         // Redirect naar klachtGelukt.php
         header("Location: http://localhost/Project10/includes/html/klachtGelukt.php");
+    }
+
+    public static function delete($ID) {
+        // de sql code voor delete
+        $db = new Database("localhost", "root", "", "project_10");
+        $db->SQLCommando('DELETE FROM klacht WHERE ID = ?', [$ID]);
     }
 }
