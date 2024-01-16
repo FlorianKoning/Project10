@@ -116,7 +116,7 @@ class Account{
     }
 
     public function deleteAccount($accountNaam){
-        $db = new Database("localhost","root","","donkey_travel");
+        $db = new Database("localhost","root","","project_10");
         
         // Checken waar de account id in de database overeenkomt met de gegeven account id
         $db->SQLCommando("delete from account where naam  = :naam", ["naam" => $accountNaam]);
@@ -137,7 +137,7 @@ class Account{
         $TheSame = password_verify($accountWachtwoord, $HashedWachtwoord);
 
         if($TheSame){
-            header("Location: http://localhost/Donkey_Travel/homePagina.php");
+            header("Location: http://localhost/Donkey_Travel/userPagina.php");
         } else{
             echo "We hebben u niet gevonden, probeer opnieuw.";
         }
