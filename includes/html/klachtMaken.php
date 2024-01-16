@@ -14,6 +14,7 @@ $klacht = new klacht($db->conn);
     <link rel="stylesheet" href="../css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <title>Gemeetne Rotterdam Klachten | Kacht Aanmaken</title>
 </head>
 
@@ -61,24 +62,7 @@ $klacht = new klacht($db->conn);
         </div>
 
         <div class="newsContainer">
-            <h2 style="text-align: center;">News</h2>
-            <div class="newsboxContainer">
-                <div class="newsbox">
-                    <img width="400px" height="150px" src="./includes/images/newFoto1.jpg" alt="foto van een hal">
-                    <h4>Heel veel eten enzo weet je wel!</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
-                </div>
-                <div class="newsbox">
-                    <img width="400px" height="150px" src="./includes/images/newFoto2.jpg" alt="foto van een hal">
-                    <h4>We hebben oude huizen!!!!!</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
-                </div>
-                <div class="newsbox">
-                    <img width="400px" height="150px" src="./includes/images/newFoto3.jpg" alt="foto van een hal">
-                    <h4>NEWS!!!!</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic atque distinctio aspernatur magnam, reprehenderit, quaerat eligendi aliquid iste nam enim neque quae mollitia inventore vitae odio blanditiis. Praesentium, dicta minus.</p>
-                </div>
-            </div>
+
         </div>
 
 

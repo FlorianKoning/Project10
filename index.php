@@ -72,7 +72,7 @@ $klacht = new klacht($db->conn);
 
                     <div class="input-box">
                         <label>wachtwoord</label>
-                        <input type="password" placeholder="typ hier uw emailadress in">
+                        <input type="password" placeholder="typ hier uw wachtwoord in">
                     </div>
 
                     <button>Submit</button>
