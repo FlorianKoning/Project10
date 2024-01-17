@@ -73,7 +73,7 @@
 
 
         <?php
-        
+        // Checkt of de naam en wachtwoord juist zijn
         if(!empty($_POST["naam"]) || !empty($_POST["wachtwoord"])){
             if(($_POST["naam"] == "admin" ) || $_POST["wachtwoord"] == "admin"){
                 header("Location: http://localhost/Project10/includes/html/adminUserPagina.php");

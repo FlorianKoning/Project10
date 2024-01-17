@@ -142,12 +142,15 @@ class Account{
 
         $logins = $db->SQLCommando("select * from account where Email = :Email", ["Email" => $accountEmail]);
 
+        // Haal het gehashed wachtwoord uit de database
         foreach($logins as $login){
             $HashedWachtwoord = $login["Wachtwoord"];
         }
 
+        // Verifiert het inkomende wachtwoord met de opgeslagen wachtwoord
         $TheSame = password_verify($accountWachtwoord, $HashedWachtwoord);
 
+        // Als de wachtwoorden gelijk zijn dan stuurt de functie naar userPagina.php of als het niet zo is geeft het een message
         if($TheSame){
             header("Location: http://localhost/project10/includes/html/userPagina.php");
         } else{
@@ -163,17 +166,21 @@ class Account{
 
         $logins = $db->SQLCommando("select * from account where Email = :Email", ["Email" => $accountEmail]);
 
+        // Haal het gehashed wachtwoord uit de database
         foreach($logins as $login){
             $HashedWachtwoord = $login["Wachtwoord"];
         }
 
+        // Verifiert het inkomende wachtwoord met de opgeslagen wachtwoord
         $TheSame = password_verify($accountWachtwoord, $HashedWachtwoord);
 
+        // Als de wachtwoorden gelijk zijn dan voert het de updateAccount functie uit en vervangt de gegevens in de database
         if($TheSame){
             $this->accountWachtwoord = $HashedWachtwoord;
             $this->accountID = $accountID;
             $this->updateAccount($this->accountID);
 
+            // Laat de nieuwe gegevens zien
             echo "Uw nieuwe gegevens <br>";
             $this->afdrukkenAccount();
         } else{
@@ -189,12 +196,15 @@ class Account{
 
         $logins = $db->SQLCommando("select * from account where Email = :Email", ["Email" => $accountEmail]);
 
+        // Haal het gehashed wachtwoord uit de database
         foreach($logins as $login){
             $HashedWachtwoord = $login["Wachtwoord"];
         }
 
+        // Verifiert het inkomende wachtwoord met de opgeslagen wachtwoord
         $TheSame = password_verify($accountWachtwoord, $HashedWachtwoord);
 
+        // Het geeft de functie de value om te confirmeren dat het wachtwoord juist is
         if($TheSame){
             return true;
         } else{

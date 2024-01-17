@@ -29,12 +29,13 @@ session_start();
 
             // account class aanvragen
             require_once "../classes/account.php";
-
             $account = new Account($accountNaam, $accountWachtwoord, $accountEmail, $accountID);
-            
+
+            // Checkt het wachtwoord en verwijst daarna door naar de update
             $account->GegevenVeranderenWachtWoordCheck($_SESSION["email"], $accountWachtwoord, $accountID);
 
             echo "<br>";
+            // BUTTON :'D
             echo "<button><a href='userPagina.php'> Terug naar het menu </a></button>";
 
             $_SESSION["naam"] = $account->getAccountNaam();

@@ -3,11 +3,11 @@ session_start();
 
 require "account.php";
 
-//! Vergeet niet POST te veranderen naar SESSION bij merge en links naar pagina"s :P
-
+// Maakt de class aan
 $account = new Account($_SESSION["email"]);
 $account->searchAccountEmail($_SESSION["email"]);
 
+// Met de search hierboven haalt het de gegevens op uit de database en stopt specifieke gegevens in sessions
 $_SESSION["id"] = $account->getAccountID();
 $_SESSION["email"] = $_POST["email"];
 
@@ -29,6 +29,7 @@ $_SESSION["email"] = $_POST["email"];
         </header>
 
         <div>
+            <!-- Vraagt de gegevens op vanuit de database om in de values te zetten -->
             <h1>Welke gegevens wilt u wijzigen?</h1>
             <form action="accountGegevenVeranderen2.php" method="post">
                 ID: <?php echo $account->getAccountID(); ?><br>

@@ -21,6 +21,7 @@
         $accountEmail = $_POST["emailvak"];
         $accountWachtwoord = $_POST["wachtwoordvak"];
 
+        // setup voor de class based functies
         require_once "../classes/account.php";
         require_once "../classes/klacht.php";
         $db = new Database("localhost", "root", "", "project_10");
@@ -30,7 +31,7 @@
         $account->searchAccountEmail($accountEmail);
         $accountID = $account->getAccountID();
 
-        // account gegevens verwijderen
+        // account gegevens verwijderen als de wachtwoorden hetzelfde zijn
         if ($account->VerwijderCheck($accountEmail, $accountWachtwoord) == true){
             $account->deleteAccount($accountEmail);
             $klacht->deleteAllAccountId($accountID);
