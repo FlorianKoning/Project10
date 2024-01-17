@@ -1,7 +1,6 @@
 <?php
 session_start();
-$_SESSION['email'] = "";
-$_SESSION['ingelogt'] = false;
+$_SESSION['email'] = NULL;
 
 require_once './includes/classes/account.php';
 require_once './includes/classes/klacht.php';
