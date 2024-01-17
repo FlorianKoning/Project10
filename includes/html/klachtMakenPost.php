@@ -13,8 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $titel = $_POST['title'];
     $omschrijving = $_POST['omschrijving'];
     $datum = $_POST['datum'];
-    $latitude = 4.793248;
-    $longitude = 7.0834;
+    $latitude = $_POST['latitude'];
+    $longitude = $_POST['longitude'];
     $accountID = $account->getAccountID();
 
     if (empty($titel) || empty($omschrijving) || empty($datum)) {

@@ -69,26 +69,32 @@ class Account{
     }
 
     public function readAccounts(){
-        $db = new Database("localhost","root","","project10");
+        $db = new Database("localhost","root","","project_10");
+        $rowCount = 1;
 
         // Alle account gegevens in de database opvragen
         $accountList = $db->SQLCommando("select * from account where 1",[]);
 
-        echo "<table>"; 
-        echo "<th>ID</th>";
-        echo "<th>Naam</th>";
-        echo "<th>Email</th>";
-        echo "</tr>";
+        echo "<thead>";
+        echo "<th scope='col'>#</th>";  
+        echo "<th scope='col'>ID</th>";
+        echo "<th scope='col'>Naam</th>";
+        echo "<th scope='col'>Email</th>";
+        echo "<th scope='col'>Delete</th>";
+        echo "</tr>";   
+        echo "</thead>";
 
         // Alle account gegevens laten zien
         foreach($accountList as $account){
             echo "<tr>";
+            echo "<th scope='row'>" . $rowCount . "</th>";
             echo "<td>" . $account["ID"] . "</td>";
-            echo "<td>" . $account["naam"] . "</td>";
-            echo "<td>" . $account["email"] . "</td>";
+            echo "<td>" . $account["Naam"] . "</td>";
+            echo "<td>" . $account["Email"] . "</td>";
+            echo "<td> <form action='klachtDelete.php' method='POST'><button class='btn btn-primary' type='submit' name='DELETE' value='" . $account["ID"] . "'>Delete</button></form></td>";
             echo "</tr>";
+            $rowCount++;
         }
-        echo "</table>";
     }
 
     public function updateAccount($accountID){
