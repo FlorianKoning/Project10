@@ -1,9 +1,6 @@
 <?php
-session_start();
-$_SESSION['email'];
-
-require_once '../classes/klacht.php';
-$klacht = new klacht();
+require_once '../classes/account.php';
+$account = new Account();
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -14,7 +11,7 @@ $klacht = new klacht();
     <link rel="stylesheet" href="../css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Gemeente Rotterdam Klachten | Admin Pagina</title>
+    <title>Gemeente Rotterdam Klachten | UserPagina</title>
 </head>
 
 <body>
@@ -50,8 +47,18 @@ $klacht = new klacht();
 
         <div class="container-fluid">
             <div class="titleContainer">
-                <h1>Welkom bij de admin pagina!</h1>
-                <p>Admin</p>
+            <?php
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $ID = $_POST['DELETE'];
+                    
+                    if (!empty($ID)) {
+                        $account->deleteAccount($ID);
+                        echo "<h1> Account is verwijderd </h1>";
+                    } else {
+                        echo "er is iets fout gegaan, kon account niet verwijderen";
+                    }
+                }
+            ?>
             </div>
         </div>
     </header>
@@ -60,14 +67,9 @@ $klacht = new klacht();
     <main style="height: 150vh;" class="userpaginaMain">
         <div class="textboxContainer">
 
-            <div class="textbox" onclick="location.href='../html/readAdminKlachten.php';" style="cursor: pointer;">
-                <h4 style="color: #61892F;">Read Klachten</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>
-            </div>
-
             <div class="textbox" onclick="location.href='../html/readAdminKlanten.php';" style="cursor: pointer;">
-                <h4 style="color: #61892F;">Read Klanten</h4>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minima doloribus eveniet aliquid officiis, quo facere inventore deleniti voluptates vero?</p>
+                <h4 style="color: #61892F;">Terug naar Admin Pagina</h4>
+                <p>stuurt je terug naar de admin user pagina.</p>
             </div>
         </div>
 

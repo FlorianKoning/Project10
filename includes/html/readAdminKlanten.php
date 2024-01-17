@@ -24,6 +24,7 @@ $account = new Account();
     <!-- navbar en header img van website -->
     <header style="background-color: #222629;">
         <!-- navbar met foto -->
+        <!-- navbar met foto -->
         <nav class="navbar navbar-expand-lg " style="border-bottom: #86C232 solid 2px; background-color: #222629;">
             <div class="container-fluid">
                 <img src="../images/logo-gemeente-rotterdam.png" alt="Logo" width="80px" class="d-inline-block align-text-top">
@@ -34,16 +35,16 @@ $account = new Account();
                 <div style="letter-spacing: 1px; text-transform: uppercase;" class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a style="color: white;" class="nav-link smallerText" href="klachtMaken.php"><i>Klacht aanmaken</i></a>
+                            <a style="color: white;" class="nav-link smallerText" href="adminUserPagina.php"><i>Home</i></a>
                         </li>
                         <li class="nav-item">
-                            <a style="color: white;" class="nav-link smallerText" href="userPagina.php"><i>Home</i></a>
-                        </li>
-                        <li class="nav-item smallerText">
-                            <a style="color: white;" class="nav-link" href="https://www.google.com/maps/d/viewer?mid=1-LWtYaeSCcpYJZcBAqD9EZqlKyY&hl=nl&ll=51.903391420345116%2C4.445905000000003&z=14"><i>Kaart</i></a>
+                            <a style="color: white;" class="nav-link smallerText" href="klachtMaken.php"><i>Read Klachten</i></a>
                         </li>
                         <li class="nav-item">
-                            <a style="color: white;" class="nav-link active" href="/index.php">Log uit</a>
+                            <a style="color: white;" class="nav-link smallerText" href="klachtMaken.php"><i>Read Klanten</i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: white;" class="nav-link smallerText" href="loguit.php"><i>Log uit</i></a>
                         </li>
                     </ul>
                 </div>

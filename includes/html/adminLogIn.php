@@ -31,7 +31,7 @@
                             <a style="color: white;" class="nav-link" href="https://www.google.com/maps/d/viewer?mid=1-LWtYaeSCcpYJZcBAqD9EZqlKyY&hl=nl&ll=51.903391420345116%2C4.445905000000003&z=14"><i>Kaart</i></a>
                         </li>
                         <li class="nav-item">
-                            <a style="color: white;" class="nav-link active" href="#">Log in</a>
+                            <a style="color: white;" class="nav-link active" href="loguit.php">Log in</a>
                         </li>
                     </ul>
                 </div>

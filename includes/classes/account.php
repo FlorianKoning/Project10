@@ -74,27 +74,33 @@ class Account{
 
         // Alle account gegevens in de database opvragen
         $accountList = $db->SQLCommando("select * from account where 1",[]);
+        if (empty($accountList)) {
+            echo "<h1 style='text-align: center; color: #fff;'>Geen data gevonden, database is leeg!</h1>";
+        } elseif (!empty($accountList)) {
+            echo "<thead>";
+            echo "<th scope='col'>#</th>";  
+            echo "<th scope='col'>ID</th>";
+            echo "<th scope='col'>Naam</th>";
+            echo "<th scope='col'>Email</th>";
+            echo "<th scope='col'>Delete</th>";
+            echo "</tr>";   
+            echo "</thead>";
 
-        echo "<thead>";
-        echo "<th scope='col'>#</th>";  
-        echo "<th scope='col'>ID</th>";
-        echo "<th scope='col'>Naam</th>";
-        echo "<th scope='col'>Email</th>";
-        echo "<th scope='col'>Delete</th>";
-        echo "</tr>";   
-        echo "</thead>";
-
-        // Alle account gegevens laten zien
-        foreach($accountList as $account){
-            echo "<tr>";
-            echo "<th scope='row'>" . $rowCount . "</th>";
-            echo "<td>" . $account["ID"] . "</td>";
-            echo "<td>" . $account["Naam"] . "</td>";
-            echo "<td>" . $account["Email"] . "</td>";
-            echo "<td> <form action='klachtDelete.php' method='POST'><button class='btn btn-primary' type='submit' name='DELETE' value='" . $account["ID"] . "'>Delete</button></form></td>";
-            echo "</tr>";
-            $rowCount++;
+            // Alle account gegevens laten zien
+            foreach($accountList as $account){
+                echo "<tr>";
+                echo "<th scope='row'>" . $rowCount . "</th>";
+                echo "<td>" . $account["ID"] . "</td>";
+                echo "<td>" . $account["Naam"] . "</td>";
+                echo "<td>" . $account["Email"] . "</td>";
+                echo "<td> <form action='adminDeleteKlant.php' method='POST'><button class='btn btn-primary' type='submit' name='DELETE' value='" . $account["ID"] . "'>Delete</button></form></td>";
+                echo "</tr>";
+                $rowCount++;
+            }
+        } else {
+            echo "how?";
         }
+        
     }
 
     public function updateAccount($accountID){
@@ -121,11 +127,11 @@ class Account{
         ]);
     }
 
-    public function deleteAccount($accountEmail){
+    public function deleteAccount($ID){
         $db = new Database("localhost","root","","project_10");
         
         // Checken waar de account id in de database overeenkomt met de gegeven account id
-        $db->SQLCommando("delete from account where Email  = :Email", ["Email" => $accountEmail]);
+        $db->SQLCommando("delete from account where ID  = :ID", ["ID" => $ID]);
     }
 
     public function logInCheckAccount($accountEmail, $accountWachtwoord){
