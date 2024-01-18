@@ -5,7 +5,7 @@ $_SESSION['email'] = NULL;
 require_once './includes/classes/account.php';
 require_once './includes/classes/klacht.php';
 $db = new Database("localhost", "root", "", "project_10");
-$klacht = new klacht($db->conn);
+$klacht = new klacht();
 
 ?>
 <!DOCTYPE html>
@@ -48,6 +48,7 @@ $klacht = new klacht($db->conn);
             </div>
         </nav>
 
+        <!-- een van de 2 hero's -->
         <div class="container-fluid">
             <div class="banner">
                 <div class="banner-text">
@@ -82,15 +83,15 @@ $klacht = new klacht($db->conn);
         </div>
 
         <?php
-        
-        if(!empty($_POST["email"]) || !empty($_POST["wachtwoord"])){
+
+        if (!empty($_POST["email"]) || !empty($_POST["wachtwoord"])) {
             $_SESSION["email"] = $_POST["email"];
             $accountWachtwoord = $_POST["wachtwoord"];
 
             $check = new Account($_SESSION["email"], $accountWachtwoord);
             $check->logInCheckAccount($_SESSION["email"], $accountWachtwoord);
         }
-        
+
         ?>
 
 

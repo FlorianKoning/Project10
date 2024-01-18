@@ -22,6 +22,7 @@ $accountID = $account->getAccountID();
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <title>Gemeente Rotterdam Klachten | Klacht read</title>
 </head>
+
 <body>
 
     <!-- navbar en header img van website -->
@@ -46,13 +47,13 @@ $accountID = $account->getAccountID();
                             <a style="color: white;" class="nav-link" href="https://www.google.com/maps/d/viewer?mid=1-LWtYaeSCcpYJZcBAqD9EZqlKyY&hl=nl&ll=51.903391420345116%2C4.445905000000003&z=14"><i>Kaart</i></a>
                         </li>
                         <li class="nav-item">
-                            <a style="color: white;" class="nav-link active" href="#">Log uit</a>
+                            <a style="color: white;" class="nav-link active" href="loguit.php">Log uit</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        
+
         <div class="container-fluid">
             <div class="titleContainer">
                 <h1>Uw Klachten Maar Gesorteerd op Tijd</h1>
@@ -68,8 +69,8 @@ $accountID = $account->getAccountID();
             <div>
                 <table class="table table-striped table-dark">
                     <thead>
-                    
-                        <?php $klacht->readKlachtTijd($accountID)?>
+
+                        <?php $klacht->readKlachtTijd($accountID) ?>
                     </thead>
                 </table>
             </div>

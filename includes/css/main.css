@@ -72,6 +72,8 @@ li {
     background-color: #222629;
     align-content: center;
     justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .formContainer .form {
@@ -116,6 +118,24 @@ li {
     opacity: 0.7;
 }
 
+.button {
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    background-color: #86C232;
+}
+
+.button:hover {
+    opacity: 0.7;
+}
+
 /** Title  */
 
 .titleContainer {
@@ -144,7 +164,7 @@ li {
     flex-direction: column;
 }
 
-#map{
+#map {
     width: 60%;
     height: 70vh;
     margin: auto;
