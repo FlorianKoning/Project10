@@ -59,11 +59,22 @@ $klacht = new klacht();
     </header>
 
     <main style="height: 150vh;" class="userpaginaMain">
-        <div id="map"></div>
+        <div style="margin: 0px auto 0px auto;" id="map"></div>
 
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
         <script src="../html/scripts.js"></script>
         <?php $klacht->readAdmin(); ?>
+
+        <div class="container-sm">
+            <div>
+                <table class="table table-striped table-dark">
+                    <thead>
+
+                        <?php $klacht->readKlachtAll() ?>
+                    </thead>
+                </table>
+            </div>
+        </div>
     </main>
 
     <footer>

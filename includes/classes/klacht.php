@@ -159,4 +159,41 @@ class klacht
             echo "<h1 style='color: #fff; text-align: center;'> Er zijn nog geen klachten aangemaakt in het systeem. </h1>";
         }
     }
+
+    function readKlachtAll()
+    {
+
+        $db = new Database("localhost", "root", "", "project_10");
+        $rowCount = 1;
+
+        // Alle klacht gegevens in de database
+        $klachtlijst = $db->SQLCommando("select * from klacht", []);
+
+        if (!empty($klachtlijst)) {
+            echo "<thead>";
+            echo "<th scope='col'>#</th>";
+            echo "<th scope='col'>ID</th>";
+            echo "<th scope='col'>Titel</th>";
+            echo "<th scope='col'>Omschrijving</th>";
+            echo "<th scope='col'>Tijdstip</th>";
+            echo "<th scope='col'>Delete</th>";
+            echo "</tr>";
+            echo "</thead>";
+
+            echo "<tbody>";
+            foreach ($klachtlijst as $klacht) {
+                echo "<tr>";
+                echo "<th scope='row'>" . $rowCount . "</th>";
+                echo "<td>" . $klacht["ID"] . "</td>";
+                echo "<td>" . $klacht["Titel"] . "</td>";
+                echo "<td>" . $klacht["Omschrijving"] . "</td>";
+                echo "<td>" . $klacht["Tijdstip"] . "</td>";
+                echo "<td> <form action='klachtDelete.php' method='POST'><button class='btn btn-primary' type='submit' name='DELETE' value='" . $klacht["ID"] . "'>Delete</button></form></td>";
+                echo "</tr>";
+                $rowCount++;
+            }
+        } elseif (empty($klachtlijst)) {
+            echo "<h1 style='color: #fff; text-align: center;'> Er zijn nog geen klachten aangemaakt in het systeem. </h1>";
+        }
+    }
 }
