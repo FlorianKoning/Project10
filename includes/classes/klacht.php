@@ -79,7 +79,7 @@ class klacht
                 echo "<td>" . $klacht["Omschrijving"] . "</td>";
                 echo "<td>" . $klacht["Tijdstip"] . "</td>";
                 echo "<td> <form action='klachtUpdate.php' method='POST'><button class='btn btn-primary' type='submit' name='UPDATE' value='" . $klacht["ID"] . "'>Update</button></form></td>";
-                echo "<td> <form action='klachtDelete.php' method='POST'><button class='btn btn-primary' type='submit' name='DELETE' value='" . $klacht["ID"] . "'>Delete</button></form></td>";
+                echo "<td> <form action='klachtUpdate.php' method='POST'><button class='btn btn-primary' type='submit' name='UPDATE' value='" . $klacht["ID"] . "'>Delete</button></form></td>";
                 echo "</tr>";
                 $rowCount++;
             }
@@ -110,6 +110,9 @@ class klacht
         // de sql code voor delete
         $db = new Database("localhost", "root", "", "project_10");
         $db->SQLCommando('DELETE FROM klacht WHERE ID = ?', [$ID]);
+
+        // Redirect naar readKlacht.php
+        header("Location: http://localhost/project10/includes/html/readKlacht.php");
     }
 
     //* Delete alle klachten dat de accountID hebben dat woord gegeven
@@ -150,7 +153,7 @@ class klacht
                 echo "<td>" . $klacht["Omschrijving"] . "</td>";
                 echo "<td>" . $klacht["Tijdstip"] . "</td>";
                 echo "<td> <form action='klachtUpdate.php' method='POST'><button class='btn btn-primary' type='submit' name='UPDATE' value='" . $klacht["ID"] . "'>Update</button></form></td>";
-                echo "<td> <form action='klachtDelete.php' method='POST'><button class='btn btn-primary' type='submit' name='DELETE' value='" . $klacht["ID"] . "'>Delete</button></form></td>";
+                echo "<td> <form action='klachtDelete.php' method='POST'><button class='btn btn-primary remove' type='submit' name='DELETE' value='" . $klacht["ID"] . "'>Delete</button></form></td>";
                 echo "</tr>";
                 $rowCount++;
             }

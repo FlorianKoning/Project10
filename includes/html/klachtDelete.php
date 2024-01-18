@@ -1,15 +1,15 @@
 <?php
 session_start();
-$_SESSION['email'];
 
 require_once '../classes/klacht.php';
-require_once '../classes/account.php';
 $klacht = new klacht();
-$account = new Account();
 
-$account->searchAccountEmail($_SESSION['email']);
-$accountID = $account->getAccountID();
+// zet de klacht id in een variable
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $ID = $_POST['UPDATE'];
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="nl">
 
@@ -56,8 +56,8 @@ $accountID = $account->getAccountID();
 
         <div class="container-fluid">
             <div class="titleContainer">
-                <h1>Read hier uw klachten!</h1>
-                <p>read</p>
+                <h1>Klacht verwijderen</h1>
+                <p>Delete</p>
             </div>
         </div>
     </header>
@@ -65,16 +65,13 @@ $accountID = $account->getAccountID();
     <!-- al het andere van de website -->
     <main style="height: 150vh;" class="userpaginaMain">
 
-        <div class="container.fluid">
-            <div>
-                <table class="table table-striped table-dark">
-                    <thead>
-
-                        <?php $klacht->readKlacht($accountID) ?>
-                    </thead>
-                </table>
+        <div class="container">
+            <div style="justify-content: space-between; flex-direction: column; height: 200px;" class="formContainer">
+                <h2 style="color: #fff; text-align: center; margin-top: 20px;">Weet u zeker dat u uw klacht wilt verwijderen?</h2>
+                <button onclick="<?php $klacht->delete($ID) ?>" style="background-color: #7a0012;" class="button">Verwijderen</button>
             </div>
         </div>
+
     </main>
 
     <!-- footer van de website -->
