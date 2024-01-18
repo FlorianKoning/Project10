@@ -7,6 +7,7 @@ $klacht = new klacht();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Vincent Kroon -->
     <meta charset="UTF-8">
@@ -17,9 +18,10 @@ $klacht = new klacht();
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <title>Gemeente Rotterdam | ReadAdmin</title>
 </head>
+
 <body>
     <header style="background-color: #222629;">
-         <!-- navbar met foto -->
+        <!-- navbar met foto -->
         <nav class="navbar navbar-expand-lg " style="border-bottom: #86C232 solid 2px; background-color: #222629;">
             <div class="container-fluid">
                 <img src="../images/logo-gemeente-rotterdam.png" alt="Logo" width="80px" class="d-inline-block align-text-top">
@@ -51,7 +53,7 @@ $klacht = new klacht();
             <div class="titleContainer">
                 <h1>Welkom bij de AdminPagina!</h1>
                 <p>gemeente rotterdam</p>
-                <a href="userPagina.php"><button type="button" class="btn btn-primary">Terug</button></a>
+                <a href="adminUserPagina.php"><button type="button" class="btn btn-primary">Terug</button></a>
             </div>
         </div>
     </header>
@@ -81,8 +83,10 @@ $klacht = new klacht();
             </div>
         </div>
         <div class="footerBottom">
-            <p>Copyright &copy;<?php echo date("Y"); echo $_SESSION["email"] ?>; Designed bij <span class="designers">Vincent, Valentijn en Florian</span></p>
+            <p>Copyright &copy;<?php echo date("Y");
+                                echo $_SESSION["email"] ?>; Designed bij <span class="designers">Vincent, Valentijn en Florian</span></p>
         </div>
     </footer>
 </body>
+
 </html>
